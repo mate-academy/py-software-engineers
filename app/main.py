@@ -5,16 +5,15 @@ class SoftwareEngineer:
         self.skills = []
 
     def learn_skill(self, skill):
-        self.skills.append(skill)
+        if skill not in self.skills:
+            self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str):
         super().__init__(name)
-        self.learn_skill("JavaScript")
-        self.learn_skill("HTML")
-        self.learn_skill("CSS")
+        self.skills.extend(("JavaScript", "HTML", "CSS"))
 
     def create_awesome_web_page(self):
         print(f"{self.name} is creating a webpage...")
@@ -25,9 +24,7 @@ class BackendDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str):
         super().__init__(name)
-        self.learn_skill("Python")
-        self.learn_skill("SQL")
-        self.learn_skill("Django")
+        self.skills.extend(("Python", "SQL", "Django"))
 
     def create_powerful_api(self):
         print(f"{self.name} is creating an API...")
@@ -38,8 +35,7 @@ class AndroidDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str):
         super().__init__(name)
-        self.learn_skill("Java")
-        self.learn_skill("Android studio")
+        self.skills.extend(("Java", "Android studio"))
 
     def create_smooth_mobile_app(self):
         print(f"{self.name} is creating a mobile app...")
