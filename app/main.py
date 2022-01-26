@@ -1,8 +1,7 @@
 class SoftwareEngineer:
-    skills = []
-
     def __init__(self, name: str):
         self.name = name
+        self.skills = []
 
     def learn_skill(self, *args):
         for argument in args:
@@ -12,7 +11,7 @@ class SoftwareEngineer:
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name):
         super().__init__(name)
-        self.learn_skill("Javascript", "HTML", "CSS")
+        self.learn_skill("JavaScript", "HTML", "CSS")
 
     def create_awesome_web_page(self):
         print(f"{self.name} is creating a webpage...")
@@ -43,18 +42,8 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str):
         super().__init__(name)
 
-        self.skills = set(self.skills)
-        self.skills = list(self.skills)
-
     def create_web_application(self):
         print(f"{self.name} started creating a web application...")
 
         self.create_powerful_api()
         self.create_awesome_web_page()
-
-front_dev = FrontendDeveloper("Alisa")
-print(front_dev.skills)
-
-full_stack_dev = FullStackDeveloper("Tom")
-print(full_stack_dev.skills)
-full_stack_dev.create_web_application()
