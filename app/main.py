@@ -8,7 +8,7 @@ class SoftwareEngineer:
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    def __init__(self, name):
+    def __init__(self, name: str):
         super().__init__(name)
         self.skills.extend(["JavaScript", "HTML", "CSS"])
 
@@ -18,7 +18,7 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    def __init__(self, name):
+    def __init__(self, name: str):
         super().__init__(name)
         self.skills.extend(["Python", "SQL", "Django"])
 
@@ -28,7 +28,7 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-    def __init__(self, name):
+    def __init__(self, name: str):
         super().__init__(name)
         self.skills.extend(["Java", "Android studio"])
 
@@ -38,8 +38,6 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
-    def __init__(self, name):
-        super().__init__(name)
 
     def create_web_application(self):
         print(f"{self.name} started creating a web application...")
