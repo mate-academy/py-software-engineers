@@ -1,18 +1,16 @@
 class SoftwareEngineer:
-
-    def __init__(self, name):
+    def __init__(self, name: str):
         self.name = name
         self.skills = []
 
-    def learn_skill(self, skill):
+    def learn_skill(self, skill: str):
         self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
-
-    def __init__(self, name):
+    def __init__(self, name: str):
         super().__init__(name)
-        self.skills.extend(["JavaScript", "HTML", "CSS"])
+        self.skills += ["JavaScript", "HTML", "CSS"]
 
     def create_awesome_web_page(self):
         print(f"{self.name} is creating a webpage...")
@@ -20,10 +18,9 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-
-    def __init__(self, name):
+    def __init__(self, name: str):
         super().__init__(name)
-        self.skills.extend(["Python", "SQL", "Django"])
+        self.skills += ["Python", "SQL", "Django"]
 
     def create_powerful_api(self):
         print(f"{self.name} is creating an API...")
@@ -31,19 +28,17 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-
-    def __init__(self, name):
+    def __init__(self, name: str):
         super().__init__(name)
-        self.skills.extend(["Java", "Android studio"])
+        self.skills += ["Java", "Android studio"]
 
     def create_smooth_mobile_app(self):
         print(f"{self.name} is creating a mobile app...")
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
-
-    def __init__(self, name):
+class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
+    def __init__(self, name: str):
         super().__init__(name)
 
     def create_web_application(self):
