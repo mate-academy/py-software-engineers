@@ -1,16 +1,23 @@
 class SoftwareEngineer:
-    skills = []
 
-    def __init__(self, name: str):
+    def __init__(self, name: str, skills=[]):
         self.name = name
+        self.skills = skills
+        if isinstance(self, FrontendDeveloper):
+            self.skills = ["JavaScript", "HTML", "CSS"]
+        if isinstance(self, BackendDeveloper):
+            self.skills = ["Python", "SQL", "Django"]
+        if isinstance(self, AndroidDeveloper):
+            self.skills = ["Java", "Android studio"]
+        if isinstance(self, FullStackDeveloper):
+            self.skills = ["Python", "SQL", "Django",
+                           "JavaScript", "CSS", "HTML"]
 
     def learn_skill(self, skill: str):
         self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    skills = ["JavaScript", "HTML", "CSS"]
-
     def __init__(self, name):
         super(FrontendDeveloper, self).__init__(name)
 
@@ -20,7 +27,6 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    skills = ["Python", "SQL", "Django"]
 
     def __init__(self, name):
         super(BackendDeveloper, self).__init__(name)
@@ -31,7 +37,6 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-    skills = ["Java", "Android studio"]
 
     def __init__(self, name):
         super(AndroidDeveloper, self).__init__(name)
@@ -44,7 +49,6 @@ class AndroidDeveloper(SoftwareEngineer):
 class FullStackDeveloper(FrontendDeveloper,
                          BackendDeveloper,
                          AndroidDeveloper):
-    skills = ["Python", "SQL", "Django", "JavaScript", "CSS", "HTML"]
 
     def __init__(self, name):
         super(FullStackDeveloper, self).__init__(name)
