@@ -38,9 +38,6 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
-    def __init__(self, name: str):
-        super().__init__(name)
-
     def create_web_application(self):
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
