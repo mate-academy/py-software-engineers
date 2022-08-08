@@ -16,7 +16,7 @@ class FrontendDeveloper(SoftwareEngineer):
 
     def create_awesome_web_page(self):
         print(f"{self.name} is creating a webpage...")
-        return f"<h1>Hello world</h1>"
+        return "<h1>Hello world</h1>"
 
 
 class BackendDeveloper(SoftwareEngineer):
@@ -27,7 +27,7 @@ class BackendDeveloper(SoftwareEngineer):
 
     def create_powerful_api(self):
         print(f"{self.name} is creating an API...")
-        return f"http://127.0.0.1:8000"
+        return "http://127.0.0.1:8000"
 
 
 class AndroidDeveloper(SoftwareEngineer):
@@ -38,7 +38,7 @@ class AndroidDeveloper(SoftwareEngineer):
 
     def create_smooth_mobile_app(self):
         print(f"{self.name} is creating a mobile app...")
-        return f"Ads every three swipes"
+        return "Ads every three swipes"
 
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
