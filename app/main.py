@@ -45,7 +45,9 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
 
     def __init__(self, name: str):
         super().__init__(name)
-        self.skills = BackendDeveloper(self.name).skills + FrontendDeveloper(self.name).skills
+        self.skills = \
+            BackendDeveloper(self.name).skills + \
+            FrontendDeveloper(self.name).skills
 
     def create_web_application(self):
         print(f"{self.name} started creating a web application...")
