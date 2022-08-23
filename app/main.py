@@ -1,11 +1,12 @@
 class SoftwareEngineer:
     skills = []
 
+    @classmethod
+    def learn_skill(cls, skill: str):
+        cls.skills.append(skill)
+
     def __init__(self, name: str):
         self.name = name
-
-    def learn_skill(self, skill: str):
-        self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
