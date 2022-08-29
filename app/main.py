@@ -22,7 +22,7 @@ class FrontendDeveloper(SoftwareEngineer):
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name):
         super().__init__(name)
-        self.skills = ["Python", "SQL", "Django"]
+        self.skills += ["Python", "SQL", "Django"]
 
     def create_powerful_api(self):
         print(f"{self.name} is creating an API...")
@@ -39,10 +39,7 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
-    def __init__(self, name):
-        super().__init__(name)
-        self.skills = ["Python", "SQL", "Django", "JavaScript", "HTML", "CSS"]
+class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
 
     def create_web_application(self):
         print(f"{self.name} started creating a web application...")
