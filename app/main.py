@@ -19,7 +19,7 @@ class FrontendDeveloper(SoftwareEngineer):
 
     def create_awesome_web_page(self):
         print(f"{self.name} is creating a webpage...")
-        return "<h1>Hello world</h1>"
+        return("<h1>Hello world</h1>")
 
 
 class BackendDeveloper(SoftwareEngineer):
@@ -33,7 +33,7 @@ class BackendDeveloper(SoftwareEngineer):
 
     def create_powerful_api(self):
         print(f"{self.name} is creating an API...")
-        return "http://127.0.0.1:8000"
+        return("http://127.0.0.1:8000")
 
 
 class AndroidDeveloper(SoftwareEngineer):
@@ -50,9 +50,6 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper,):
-    def __init__(self, name: str):
-        super().__init__(name)
-
     def create_web_application(self):
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
