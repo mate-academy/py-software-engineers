@@ -5,13 +5,13 @@ class SoftwareEngineer:
         self.name = name
 
     @classmethod
-    def learn_skill(cls, skill: str):
+    def learn_skill(cls, skill: str) -> None:
         cls.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
-        super(FrontendDeveloper, self).__init__(name=name)
+        super().__init__(name)
         FrontendDeveloper.skills = [
             "JavaScript",
             "HTML",
@@ -25,7 +25,7 @@ class FrontendDeveloper(SoftwareEngineer):
 
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
-        super(BackendDeveloper, self).__init__(name=name)
+        super().__init__(name)
         BackendDeveloper.skills = [
             "Python",
             "SQL",
@@ -39,7 +39,7 @@ class BackendDeveloper(SoftwareEngineer):
 
 class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
-        super(AndroidDeveloper, self).__init__(name=name)
+        super().__init__(name)
         AndroidDeveloper.skills = [
             "Java",
             "Android studio",
@@ -52,7 +52,7 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
-        super(FullStackDeveloper, self).__init__(name=name)
+        super().__init__(name)
         FullStackDeveloper.skills = [
             "Python",
             "SQL",
@@ -62,7 +62,7 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
             "CSS",
         ]
 
-    def create_web_application(self):
+    def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
         self.create_awesome_web_page()
