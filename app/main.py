@@ -18,7 +18,7 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    def __init__(self, name):
+    def __init__(self, name) -> None:
         super().__init__(name)
         self.skills += ["Python", "SQL", "Django"]
 
@@ -28,7 +28,7 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-    def __init__(self, name):
+    def __init__(self, name) -> None:
         super().__init__(name)
         self.skills += ["Java", "Android studio"]
 
@@ -38,10 +38,8 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
-    def __init__(self, name):
-        super().__init__(name)
 
-    def create_web_application(self):
+    def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
         self.create_awesome_web_page()
