@@ -36,7 +36,7 @@ front_dev.skills == [
 ```
 
 It should have one additional method: `create_awesome_web_page`.
-It should print a following string `"{name} is creating a webpage..."`
+It should print a following string `"{name} is" creating a webpage..."`
 where `name` is the `name` of the engineer 
 and return the code of the created webpage: `"<h1>Hello world</h1>"`.
 
