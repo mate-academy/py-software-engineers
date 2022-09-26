@@ -1,5 +1,5 @@
 class SoftwareEngineer:
-    def __init__(self, name):
+    def __init__(self, name: str) -> None:
         self.name = name
         self.skills = []
 
@@ -8,7 +8,7 @@ class SoftwareEngineer:
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    def __init__(self, name):
+    def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(
             [
@@ -25,7 +25,7 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    def __init__(self, name):
+    def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(
             [
@@ -41,7 +41,7 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-    def __init__(self, name):
+    def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(
             [
