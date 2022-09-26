@@ -1,5 +1,5 @@
 class SoftwareEngineer:
-    def __init__(self, name: str) -> None:
+    def __init__(self, name: str):
         self.name = name
         self.skills = []
 
