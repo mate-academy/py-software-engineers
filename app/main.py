@@ -8,7 +8,7 @@ class SoftwareEngineer:
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    def __init__(self, name) -> None:
+    def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend([
             "JavaScript",
