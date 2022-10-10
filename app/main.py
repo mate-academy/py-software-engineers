@@ -1,11 +1,69 @@
 from __future__ import annotations
 
-if __name__ == "__main__":
-    from developers import SoftwareEngineer, FrontendDeveloper, \
-        BackendDeveloper, AndroidDeveloper, FullStackDeveloper
-else:
-    from .developers import SoftwareEngineer, FrontendDeveloper, \
-        BackendDeveloper, AndroidDeveloper, FullStackDeveloper
+
+class SoftwareEngineer:
+    def __init__(self, name: str) -> None:
+        self.name = name
+        self.skills = []
+
+    def learn_skill(self, skill: str) -> None:
+        if skill not in self.skills:
+            self.skills.append(skill)
+
+    def learn_skills(self, skills: list) -> None:
+        for skill in skills:
+            self.learn_skill(skill)
+
+
+class FrontendDeveloper(SoftwareEngineer):
+    def __init__(self, name: str) -> None:
+        # Here is the question how to call the constructor of the ancestor?
+        super().__init__(name)
+
+        default_skills = ["JavaScript", "HTML", "CSS"]
+        self.learn_skills(default_skills)
+
+    def create_awesome_web_page(self) -> str:
+        print(f"{self.name} is creating a webpage...")
+        return "<h1>Hello world</h1>"
+
+
+class BackendDeveloper(SoftwareEngineer):
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+
+        default_skills = ["Python", "SQL", "Django"]
+        self.learn_skills(default_skills)
+
+    def create_powerful_api(self) -> str:
+        print(f"{self.name} is creating an API...")
+        return "http://127.0.0.1:8000"
+
+
+class AndroidDeveloper(SoftwareEngineer):
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+
+        default_skills = ["Java", "Android studio"]
+        self.learn_skills(default_skills)
+
+    def create_smooth_mobile_app(self) -> str:
+        print(f"{self.name} is creating a mobile app...")
+        return "Ads every three swipes"
+
+
+class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
+    def __init__(self, name: str) -> None:
+        super(FrontendDeveloper, self).__init__(name)
+
+        default_skills = \
+            ["Python", "SQL", "Django", "JavaScript", "HTML", "CSS"]
+        self.learn_skills(default_skills)
+
+    def create_web_application(self) -> None:
+        print(f"{self.name} started creating a web application...")
+        self.create_powerful_api()
+        self.create_awesome_web_page()
 
 
 # Code test block
