@@ -17,3 +17,16 @@ class FrontendDeveloper(SoftwareEngineer):
     def create_awesome_web_page(self):
         print(f"{self.name} is creating a webpage...")
         return "<h1>Hello world</h1>"
+
+
+class BackendDeveloper(SoftwareEngineer):
+    def __init__(self, name: str,
+                 skills: list=["Python", "SQL", "Django"]) -> None:
+        super().__init__(name)
+
+    def create_powerful_api(self):
+        print(f"{self.name} is creating an API...")
+        return "http://127.0.0.1:8000"
+
+    
+class AndroidDeveloper
