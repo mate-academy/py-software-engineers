@@ -39,3 +39,13 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
+class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
+    def __init__(self, name: str,
+                 skills: list = ["JavaScript", "HTML", "CSS",
+                    "Python", "SQL", "Django"]) -> None
+        super().__init__(name, skills)
+  
+    def create_web_application(self):
+        print(f"{self.name} started creating a web application...")
+        create_powerful_api()
+        create_awesome_web_page()
