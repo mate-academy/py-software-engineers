@@ -1,8 +1,8 @@
 class SoftwareEngineer:
-    skills = []
 
     def __init__(self, name: str) -> None:
         self.name = name
+        self.skills = []
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
@@ -12,7 +12,8 @@ class FrontendDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = ["JavaScript", "HTML", "CSS"]
+        for skill in ["JavaScript", "HTML", "CSS"]:
+            self.learn_skill(skill)
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -20,15 +21,10 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    skills = [
-        "Python",
-        "SQL",
-        "Django",
-    ]
-
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = ["Python", "SQL", "Django"]
+        for skill in ["Python", "SQL", "Django"]:
+            self.learn_skill(skill)
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -49,16 +45,8 @@ class FullStackDeveloper(FrontendDeveloper,
                          BackendDeveloper,
                          SoftwareEngineer):
 
-    def __init__(self, name: str) -> None:
-        super().__init__(name)
-        self.skills = ["Python",
-                       "SQL",
-                       "Django",
-                       "JavaScript",
-                       "HTML",
-                       "CSS"]
-
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
         self.create_awesome_web_page()
+
