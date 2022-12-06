@@ -6,14 +6,10 @@ class SoftwareEngineer:
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
-        return self.skills
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    skills = [
-        "JavaScript",
-        "HTML",
-        "CSS"]
+    skills = ["JavaScript", "HTML", "CSS"]
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -21,10 +17,7 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    skills = [
-        "Python",
-        "SQL",
-        "Django"]
+    skills = ["Python", "SQL", "Django"]
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
