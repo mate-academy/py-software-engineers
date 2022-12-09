@@ -1,4 +1,6 @@
 class SoftwareEngineer:
+    skills = []
+
     def __init__(self, name: str) -> None:
         self.name = name
         self.skills = []
@@ -8,6 +10,8 @@ class SoftwareEngineer:
 
 
 class FrontendDeveloper(SoftwareEngineer):
+    skills = ["JavaScript", "HTML", "CSS"]
+
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills = ["JavaScript", "HTML", "CSS"]
@@ -18,6 +22,8 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
+    skills = ["Python", "SQL", "Django"]
+
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills = ["Python", "SQL", "Django"]
@@ -28,6 +34,8 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
+    skills = ["Java", "Android studio"]
+
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills = ["Java", "Android studio"]
@@ -37,15 +45,10 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class SkillsMixin:
-    def __init__(self) -> None:
-        self.skills = ["Python", "SQL", "Django", "JavaScript", "HTML", "CSS"]
-
-
-class FullStackDeveloper(SkillsMixin, BackendDeveloper, FrontendDeveloper):
+class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
-        super().__init__()
-        self.name = name
+        super().__init__(name)
+        self.skills = BackendDeveloper.skills + FrontendDeveloper.skills
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
