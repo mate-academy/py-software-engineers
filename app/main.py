@@ -4,7 +4,7 @@ class SoftwareEngineer:
         self.skills = []
 
     def learn_skill(self, skill: str) -> None:
-        self.skills.append(skill)
+        self.skills.extend([skill])
 
 
 class FrontendDeveloper(SoftwareEngineer):
