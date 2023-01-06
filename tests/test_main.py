@@ -123,6 +123,7 @@ def test_create_web_application_method(engineer, printed_messages):
 
 
 @pytest.mark.parametrize(
+    "function,result",
     [
         (
                 SoftwareEngineer.__init__,
