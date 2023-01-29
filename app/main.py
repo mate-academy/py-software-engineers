@@ -2,11 +2,7 @@ from __future__ import annotations
 
 
 class SoftwareEngineer:
-    def __init__(
-            self,
-            name: str
-    ) -> None:
-
+    def __init__(self, name: str) -> None:
         self.name = name
         self.skills = []
 
@@ -15,11 +11,7 @@ class SoftwareEngineer:
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    def __init__(
-            self,
-            name: str
-    ) -> None:
-
+    def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills += ["JavaScript", "HTML", "CSS"]
 
@@ -29,10 +21,7 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    def __init__(
-            self,
-            name: str,
-    ) -> None:
+    def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills += ["Python", "SQL", "Django"]
 
@@ -42,10 +31,7 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-    def __init__(
-            self,
-            name: str,
-    ) -> None:
+    def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills += ["Java", "Android studio"]
 
@@ -55,14 +41,7 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
-    def __init__(
-            self,
-            name: str
-    ) -> None:
-        super().__init__(name)
-        self.skills = ["Python", "SQL", "Django", "JavaScript", "HTML", "CSS"]
-
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
-        BackendDeveloper.create_powerful_api(self)
-        FrontendDeveloper.create_awesome_web_page(self)
+        self.create_powerful_api()
+        self.create_awesome_web_page()
