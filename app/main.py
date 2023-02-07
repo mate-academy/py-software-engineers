@@ -7,7 +7,7 @@ class SoftwareEngineer:
         self.skills = []
 
     def learn_skill(self, skill: str) -> None:
-        return self.skills.append(skill)
+        self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
