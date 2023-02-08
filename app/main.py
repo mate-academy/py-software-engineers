@@ -4,10 +4,7 @@ class SoftwareEngineer:
         self.skills = []
 
     def learn_skill(self, skill: str) -> None:
-        if isinstance(skill, str):
-            self.skills.append(skill)
-        if isinstance(skill, list):
-            self.skills.extend(skill)
+        self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
