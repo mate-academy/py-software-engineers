@@ -15,8 +15,7 @@ class FrontendDeveloper(SoftwareEngineer):
             "HTML",
             "CSS",
         ]
-        for skill in front_skills:
-            self.learn_skill(skill)
+        self.skills.extend(front_skills)
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -31,8 +30,7 @@ class BackendDeveloper(SoftwareEngineer):
             "SQL",
             "Django",
         ]
-        for skill in back_skills:
-            self.learn_skill(skill)
+        self.skills.extend(back_skills)
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -47,8 +45,7 @@ class AndroidDeveloper(SoftwareEngineer):
             "Java",
             "Android studio",
         ]
-        for skill in android_skills:
-            self.learn_skill(skill)
+        self.skills.extend(android_skills)
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
