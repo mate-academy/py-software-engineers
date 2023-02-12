@@ -1,8 +1,8 @@
 # write your code here
 class SoftwareEngineer:
     def __init__(
-        self,
-        name: str,
+            self,
+            name: str,
     ) -> None:
         self.name = name
         self.skills = []
@@ -13,16 +13,16 @@ class SoftwareEngineer:
 
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(
-        self,
-        name: str,
+            self,
+            name: str,
     ) -> None:
         super().__init__(
             name=name,
         )
-        self.skills = [
+        self.skills += [
             "JavaScript",
             "HTML",
-            "CSS",
+            "CSS"
         ]
 
     def create_awesome_web_page(self) -> str:
@@ -35,7 +35,7 @@ class BackendDeveloper(SoftwareEngineer):
         super(BackendDeveloper, self).__init__(
             name=name
         )
-        self.skills = [
+        self.skills += [
             "Python",
             "SQL",
             "Django",
@@ -51,7 +51,7 @@ class AndroidDeveloper(SoftwareEngineer):
         super().__init__(
             name=name,
         )
-        self.skills = [
+        self.skills += [
             "Java",
             "Android studio"
         ]
@@ -62,17 +62,8 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
-    def __init__(
-        self,
-        name: str
-    ) -> None:
-        super().__init__(name)
-        self.skills = []
-        for skill in BackendDeveloper(name).skills:
-            self.skills.append(skill)
-
-        for skill in FrontendDeveloper(name).skills:
-            self.skills.append(skill)
+    def __init__(self, name: str) -> None:
+        super().__init__(name=name)
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
