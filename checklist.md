@@ -25,3 +25,4 @@ numbers.append(5)
 ```
 
 2. `skills` variable should be an attribute of the instance not class.
+3. Make sure not to override a method, if you do not add additional logic inside (that would be a bad practice).
