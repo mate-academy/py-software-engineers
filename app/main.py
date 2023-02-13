@@ -12,10 +12,7 @@ class FrontendDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        if not self.skills:
-            self.skills = ["JavaScript", "HTML", "CSS"]
-        else:
-            self.skills.extend(["JavaScript", "HTML", "CSS"])
+        self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -26,10 +23,7 @@ class BackendDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        if not self.skills:
-            self.skills = ["Python", "SQL", "Django"]
-        else:
-            self.skills.extend(["Python", "SQL", "Django"])
+        self.skills.extend(["Python", "SQL", "Django"])
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
