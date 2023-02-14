@@ -4,7 +4,6 @@ class SoftwareEngineer:
         self.name = name
         self.skills = []
 
-    # @classmethod
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
 
