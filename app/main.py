@@ -33,7 +33,7 @@ class BackendDeveloper(SoftwareEngineer):
 class AndroidDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
-        super(AndroidDeveloper, self).__init__(name)
+        super().__init__(name)
         self.skills.extend(["Java", "Android studio"])
 
     def create_smooth_mobile_app(self) -> str:
