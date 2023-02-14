@@ -12,7 +12,6 @@ class FrontendDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.name = name
         self.skills.extend([
             "JavaScript",
             "HTML",
@@ -28,7 +27,6 @@ class BackendDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.name = name
         self.skills.extend([
             "Python",
             "SQL",
@@ -44,7 +42,6 @@ class AndroidDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.name = name
         self.skills.extend([
             "Java",
             "Android studio",
