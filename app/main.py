@@ -41,7 +41,6 @@ class AndroidDeveloper(SoftwareEngineer):
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
-        api_address = self.create_powerful_api()
-        webpage_code = self.create_awesome_web_page()
-        return f"Web app with API: {api_address}, " \
-               f"Web page code: {webpage_code}"
+        self.create_powerful_api()
+        self.create_awesome_web_page()
+
