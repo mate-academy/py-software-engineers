@@ -5,7 +5,7 @@ before starting.
 
 Firstly, you should create `SoftwareEngineer` class, 
 which will be a parent for all other classes. 
-Its constructor should take one parameter: `name` of the 
+Its `__init__` method should take one parameter: `name` of the 
 engineer. Also, engineer should have `skills` attribute - 
 a list of his/her skills, such as `"Python"` or `"JavaScript"`.
 `skills` should be initialised with empty list.
@@ -22,7 +22,7 @@ engineer.learn_skill("Python")
 
 Write class `FrontendDeveloper`, 
 which should be a child of class `SoftwareEngineer`. 
-Its constructor also takes the `name` of the engineer. 
+Its `__init__` method also takes the `name` of the engineer. 
 Instances of this class should have the following default skills:
 `"JavaScript"`, `"HTML"`, `"CSS"`.
 
@@ -47,7 +47,7 @@ page = front_dev.create_awesome_web_page()  # "Alisa is creating a webpage..."
 
 Write class `BackendDeveloper`, 
 which should be a child of class `SoftwareEngineer`. 
-Its constructor also takes the `name` of the engineer. 
+Its `__init__` method also takes the `name` of the engineer. 
 Instances of this class should have the following default skills:
 `"Python"`, `"SQL"`, `"Django"`.
 
@@ -71,7 +71,7 @@ address = backend_dev.create_powerful_api()  # "Bob is creating an API..."
 
 Write class `AndroidDeveloper`, 
 which should be a child of class `SoftwareEngineer`. 
-Its constructor also takes the `name` of the engineer. 
+Its `__init__` method also takes the `name` of the engineer. 
 Instances of this class should have the following default skills:
 `"Java"`, `"Android studio"`.
 
