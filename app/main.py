@@ -20,7 +20,7 @@ class FrontendDeveloper(SoftwareEngineer):
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = ['Django', 'Python', 'SQL']
+        self.skills = ["Django", "Python", "SQL"]
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
