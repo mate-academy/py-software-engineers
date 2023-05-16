@@ -13,7 +13,7 @@ class FrontendDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name=name)
-        self.skills: list[str] = FrontendDeveloper.skills
+        self.skills += ["JavaScript", "HTML", "CSS"]
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -26,7 +26,7 @@ class BackendDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name=name)
-        self.skills: list[str] = BackendDeveloper.skills
+        self.skills += ["Python", "SQL", "Django"]
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -39,7 +39,7 @@ class AndroidDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name=name)
-        self.skills: list[str] = AndroidDeveloper.skills
+        self.skills += ["Java", "Android studio"]
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
@@ -49,9 +49,30 @@ class AndroidDeveloper(SoftwareEngineer):
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name=name)
-        self.skills: list[str] = self.skills + FrontendDeveloper.skills
+        self.skills += ["JavaScript", "HTML", "CSS"]
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         super().create_powerful_api()
         super().create_awesome_web_page()
+
+
+
+i1 = SoftwareEngineer("", ["AWS", "Docker"])
+
+
+def test_default_skills(engineer, default_skills):
+    assert sorted(engineer.skills) == sorted(default_skills)
+
+
+@pytest.mark.parametrize(
+    "engineer,new_skills,final_skill_list",
+    [
+        (SoftwareEngineer(""), ["AWS", "Docker"], ["AWS", "Docker"]),
+        (FrontendDeveloper(""), ["TypeScript", "React"], ["JavaScript", "CSS", "HTML", "TypeScript", "React"]),
+        (BackendDeveloper(""), ["Golang"], ["Python", "SQL", "Django", "Golang"]),
+        (FullStackDeveloper(""), ["AWS", "React"],
+         ["Python", "SQL", "Django", "JavaScript", "CSS", "HTML", "AWS", "React"]),
+        (AndroidDeveloper(""), ["Firebase"], ["Java", "Android studio", "Firebase"]),
+    ]
+)
