@@ -9,8 +9,6 @@ class SoftwareEngineer:
 
 class FrontendDeveloper(SoftwareEngineer):
 
-    skills: list[str] = ["JavaScript", "HTML", "CSS"]
-
     def __init__(self, name: str) -> None:
         super().__init__(name=name)
         self.skills += ["JavaScript", "HTML", "CSS"]
@@ -21,8 +19,6 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-
-    skills: list[str] = ["Python", "SQL", "Django"]
 
     def __init__(self, name: str) -> None:
         super().__init__(name=name)
@@ -35,8 +31,6 @@ class BackendDeveloper(SoftwareEngineer):
 
 class AndroidDeveloper(SoftwareEngineer):
 
-    skills: list[str] = ["Java", "Android studio"]
-
     def __init__(self, name: str) -> None:
         super().__init__(name=name)
         self.skills += ["Java", "Android studio"]
@@ -46,33 +40,9 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
-    def __init__(self, name: str) -> None:
-        super().__init__(name=name)
-        self.skills += ["JavaScript", "HTML", "CSS"]
+class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         super().create_powerful_api()
         super().create_awesome_web_page()
-
-
-
-i1 = SoftwareEngineer("", ["AWS", "Docker"])
-
-
-def test_default_skills(engineer, default_skills):
-    assert sorted(engineer.skills) == sorted(default_skills)
-
-
-@pytest.mark.parametrize(
-    "engineer,new_skills,final_skill_list",
-    [
-        (SoftwareEngineer(""), ["AWS", "Docker"], ["AWS", "Docker"]),
-        (FrontendDeveloper(""), ["TypeScript", "React"], ["JavaScript", "CSS", "HTML", "TypeScript", "React"]),
-        (BackendDeveloper(""), ["Golang"], ["Python", "SQL", "Django", "Golang"]),
-        (FullStackDeveloper(""), ["AWS", "React"],
-         ["Python", "SQL", "Django", "JavaScript", "CSS", "HTML", "AWS", "React"]),
-        (AndroidDeveloper(""), ["Firebase"], ["Java", "Android studio", "Firebase"]),
-    ]
-)
