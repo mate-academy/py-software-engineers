@@ -9,7 +9,7 @@ class SoftwareEngineer:
 
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
-        super(FrontendDeveloper, self).__init__(name)
+        super().__init__(name)
         self.skills += ["JavaScript", "HTML", "CSS"]
 
     def create_awesome_web_page(self) -> str:
@@ -19,7 +19,7 @@ class FrontendDeveloper(SoftwareEngineer):
 
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
-        super(BackendDeveloper, self).__init__(name)
+        super().__init__(name)
         self.skills += ["Python", "SQL", "Django"]
 
     def create_powerful_api(self) -> str:
@@ -29,7 +29,7 @@ class BackendDeveloper(SoftwareEngineer):
 
 class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
-        super(AndroidDeveloper, self).__init__(name)
+        super().__init__(name)
         self.skills += ["Java", "Android studio"]
 
     def create_smooth_mobile_app(self) -> str:
@@ -38,8 +38,6 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
-    def __init__(self, name: str) -> None:
-        super(FullStackDeveloper, self).__init__(name)
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
