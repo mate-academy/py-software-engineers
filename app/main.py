@@ -1,30 +1,17 @@
 class SoftwareEngineer:
-    skills = []
-
     def __init__(self, name: str) -> None:
         self.name = name
-        backend_skills = ["Python", "SQL", "Django"]
-        frontend_skills = ["JavaScript", "HTML", "CSS"]
-
-        if isinstance(self, FullStackDeveloper):
-            self.skills = backend_skills + frontend_skills
-        elif isinstance(self, FrontendDeveloper):
-            self.skills = frontend_skills
-        elif isinstance(self, BackendDeveloper):
-            self.skills = backend_skills
-        elif isinstance(self, AndroidDeveloper):
-            self.skills = ["Java", "Android studio"]
+        self.skills = []
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    # skills = ["JavaScript", "HTML", "CSS"]
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        # self.skills.extend(["JavaScript", "HTML", "CSS"])
+        self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -32,11 +19,10 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    # skills = ["Python", "SQL", "Django"]
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        # self.skills.extend(["Python", "SQL", "Django"])
+        self.skills.extend(["Python", "SQL", "Django"])
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -44,18 +30,17 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-    # skills = ["Java", "Android studio"]
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        # self.skills.extend(["Java", "Android studio"])
+        self.skills.extend(["Java", "Android studio"])
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
+class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
