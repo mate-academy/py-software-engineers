@@ -4,9 +4,8 @@ class SoftwareEngineer:
         self._skills: list[str] = []
 
     def learn_skill(self, skill: str) -> None:
-        if skill in self._skills:
-            return
-        self._skills.append(skill)
+        if skill not in self._skills:
+            self._skills.append(skill)
 
     def _learn_skills(self, *skills) -> None:
         self._skills.extend((skill for skill in skills
@@ -53,9 +52,6 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
-    def __init__(self, name: str) -> None:
-        super().__init__(name)
-
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
