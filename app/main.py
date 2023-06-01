@@ -1,10 +1,7 @@
-from typing import List, Optional
-
-
 class SoftwareEngineer:
-    def __init__(self, name: str, skills: Optional[List[str]] = None) -> None:
+    def __init__(self, name: str) -> None:
         self.name = name
-        self.skills = skills or []
+        self.skills = []
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
