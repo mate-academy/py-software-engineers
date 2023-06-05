@@ -15,11 +15,12 @@ class FrontendDeveloper(SoftwareEngineer):
             name: str,
     ) -> None:
         super().__init__(name)
-        self.skills = [
+        self.skills += [
             "JavaScript",
             "HTML",
             "CSS"
         ]
+        # self.learn_skill("JavaScript, HTML, CSS")
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -32,7 +33,7 @@ class BackendDeveloper(SoftwareEngineer):
             name: str,
     ) -> None:
         super().__init__(name)
-        self.skills = [
+        self.skills += [
             "Python",
             "SQL",
             "Django"
@@ -49,7 +50,7 @@ class AndroidDeveloper(SoftwareEngineer):
             name: str,
     ) -> None:
         super().__init__(name)
-        self.skills = [
+        self.skills += [
             "Java",
             "Android studio"
         ]
@@ -62,21 +63,12 @@ class AndroidDeveloper(SoftwareEngineer):
 class FullStackDeveloper(
     FrontendDeveloper,
     BackendDeveloper,
-    AndroidDeveloper
 ):
     def __init__(
             self,
             name: str,
     ) -> None:
         super().__init__(name)
-        self.skills = [
-            "Python",
-            "SQL",
-            "Django",
-            "JavaScript",
-            "HTML",
-            "CSS"
-        ]
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
