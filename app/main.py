@@ -10,7 +10,6 @@ class SoftwareEngineer:
 
 
 class FrontendDeveloper(SoftwareEngineer):
-
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills += ["JavaScript", "HTML", "CSS"]
@@ -21,7 +20,6 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills += ["Python", "SQL", "Django"]
@@ -32,7 +30,6 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills += ["Java", "Android studio"]
@@ -42,8 +39,10 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(BackendDeveloper,
-                         FrontendDeveloper):
+class FullStackDeveloper(
+        BackendDeveloper,
+        FrontendDeveloper
+):
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
