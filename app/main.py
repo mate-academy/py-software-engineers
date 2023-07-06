@@ -9,7 +9,7 @@ class SoftwareEngineer:
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    skills = ["JavaScript", "HTML", "CSS"]
+    skills = SoftwareEngineer.skills + ["JavaScript", "HTML", "CSS"]
 
     def __init__(self, name: str = "") -> None:
         super().__init__(name)
@@ -20,7 +20,7 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    skills = ["Python", "SQL", "Django"]
+    skills = SoftwareEngineer.skills + ["Python", "SQL", "Django"]
 
     def __init__(self, name: str = "") -> None:
         super().__init__(name)
@@ -31,7 +31,7 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-    skills = ["Java", "Android studio"]
+    skills = SoftwareEngineer.skills + ["Java", "Android studio"]
 
     def __init__(self, name: str = "") -> None:
         super().__init__(name)
