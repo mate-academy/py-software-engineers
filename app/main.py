@@ -52,7 +52,3 @@ class FullStackDeveloper(BackendDeveloper,
         self.create_powerful_api()
         self.create_awesome_web_page()
 
-
-if __name__ == '__main__':
-    full_stack_dev = FullStackDeveloper("Tom")
-    print(full_stack_dev.skills)
