@@ -10,7 +10,9 @@ class SoftwareEngineer:
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = ["JavaScript", "HTML", "CSS"]
+        self.learn_skill("JavaScript")
+        self.learn_skill("HTML")
+        self.learn_skill("CSS")
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -20,7 +22,9 @@ class FrontendDeveloper(SoftwareEngineer):
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = ["Python", "SQL", "Django"]
+        self.learn_skill("Python")
+        self.learn_skill("SQL")
+        self.learn_skill("Django")
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -31,7 +35,8 @@ class AndroidDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = ["Java", "Android studio"]
+        self.learn_skill("Java")
+        self.learn_skill("Android studio")
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
@@ -39,13 +44,6 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
-    def __init__(self, name: str) -> None:
-        super().__init__(name)
-        self.skills = ["Python", "SQL", "Django", "JavaScript", "HTML", "CSS"]
-
-    """idk how to make it without initializer cause it only have skills from
-    BackendDeveloper and a can't find a realization way. gimme a hint please"""
-
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
