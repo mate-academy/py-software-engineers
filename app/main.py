@@ -1,32 +1,16 @@
-from typing import Optional
-
-
 class SoftwareEngineer:
-    def __init__(self,
-                 name: str,
-                 skills: Optional[list[str]] = None,
-                 ) -> None:
+    def __init__(self, name: str) -> None:
         self.name = name
-        self.skills = self.coords = skills if skills else []
+        self.skills = []
 
-    def learn_skill(self,
-                    skill: str
-                    ) -> None:
+    def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    def __init__(self,
-                 name: str,
-                 skills: Optional[list[str]] = None
-                 ) -> None:
-        super().__init__(name = name, skills = skills)
-        if "JavaScript" not in self.skills:
-            self.skills.append("JavaScript")
-        if "HTML" not in self.skills:
-            self.skills.append("HTML")
-        if "CSS" not in self.skills:
-            self.skills.append("CSS")
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -34,30 +18,27 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    def __init__(self,
-                 name: str,
-                 skills: Optional[list[str]] = None
-                 ) -> None:
-        super().__init__(name = name, skills = skills)
-        if "Python" not in self.skills:
-            self.skills.append("Python")
-        if "SQL" not in self.skills:
-            self.skills.append("SQL")
-        if "Django" not in self.skills:
-            self.skills.append("Django")
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        self.skills.extend(["Python", "SQL", "Django"])
 
-    def create_powerful_api(self):
+    def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
         return "http://127.0.0.1:8000"
 
 
-def AndroidDeveloper(SoftwareEngineer):
-    def __init__(self,
-                 name: str,
-                 skills: Optional[list[str]] = None
-                 ) -> None:
-        super().__init__(name = name, skills = skills)
-        if "Java" not in self.skills:
-            self.skills.append("Java")
-        if "Android studio" not in self.skills:
-            self.skills.append("Android studio")
+class AndroidDeveloper(SoftwareEngineer):
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        self.skills.extend(["Java", "Android studio"])
+
+    def create_smooth_mobile_app(self) -> str:
+        print(f"{self.name} is creating a mobile app...")
+        return "Ads every three swipes"
+
+
+class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
+    def create_web_application(self) -> None:
+        print(f"{self.name} started creating a web application...")
+        self.create_powerful_api()
+        self.create_awesome_web_page()
