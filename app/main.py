@@ -43,5 +43,5 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
-        api_address = super().create_powerful_api()
-        webpage_code = super().create_awesome_web_page()
+        super().create_powerful_api()
+        super().create_awesome_web_page()
