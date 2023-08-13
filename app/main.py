@@ -4,7 +4,7 @@ class SoftwareEngineer:
         self.skills = []
 
     def learn_skill(self, skill: str) -> None:
-        self.skills.append(skill)
+        self.skills.append(skill) if skill not in self.skills else None
 
 
 class FrontendDeveloper(SoftwareEngineer):
