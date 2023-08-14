@@ -51,9 +51,8 @@ class AndroidDeveloper(SoftwareEngineer):
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        frontender_skills = FrontendDeveloper.default_skills
-        backender_skills = BackendDeveloper.default_skills
-        fullstack_skills = frontender_skills + backender_skills
+        fullstack_skills = (FrontendDeveloper.default_skills
+                            + BackendDeveloper.default_skills)
         self.default_skills = fullstack_skills
         for skill in self.default_skills:
             self.learn_skill(skill)
