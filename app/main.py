@@ -54,8 +54,3 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
         self.create_awesome_web_page()
-
-
-if __name__ == "__main__":
-    full_stack_dev = FullStackDeveloper("Tom")
-    full_stack_dev.create_web_application()
