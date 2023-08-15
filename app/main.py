@@ -49,11 +49,3 @@ class FullStackDeveloper(
         print(f"{self.name} started creating a web application...")
         BackendDeveloper.create_powerful_api(self)
         FrontendDeveloper.create_awesome_web_page(self)
-
-
-full_stack_dev = FullStackDeveloper("Tom")
-print(full_stack_dev.skills)
-full_stack_dev.create_web_application()
-# Tom started creating a web application...
-# Tom is creating an API...
-# Tom is creating a webpage...
