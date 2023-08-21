@@ -4,13 +4,13 @@ class SoftwareEngineer:
         self.skills = []
 
     def learn_skill(self, skill: str) -> None:
-        self.skills.append(skill)
+        if skill not in self.skills:
+            self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = []
         for lang in ["JavaScript", "HTML", "CSS"]:
             self.learn_skill(lang)
 
@@ -22,7 +22,6 @@ class FrontendDeveloper(SoftwareEngineer):
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = []
         for lang in ["Python", "SQL", "Django"]:
             self.learn_skill(lang)
 
@@ -34,7 +33,6 @@ class BackendDeveloper(SoftwareEngineer):
 class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = []
         for lang in ["Java", "Android studio"]:
             self.learn_skill(lang)
 
@@ -44,12 +42,6 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
-    def __init__(self, name: str) -> None:
-        super().__init__(name)
-        self.skills = []
-        for lang in ["Python", "SQL", "Django", "JavaScript", "HTML", "CSS"]:
-            self.learn_skill(lang)
-
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
