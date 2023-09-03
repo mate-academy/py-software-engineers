@@ -56,8 +56,3 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
         self.create_powerful_api()
         self.create_awesome_web_page()
 
-
-# #
-# full_stack_dev = FullStackDeveloper("Tom")
-# print(full_stack_dev.skills)
-# print(full_stack_dev.create_web_application())
