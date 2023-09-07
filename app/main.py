@@ -1,19 +1,16 @@
 class SoftwareEngineer:
-    def __init__(self, name: str, skills: list | None = None) -> None:
+    def __init__(self, name: str) -> None:
         self.name = name
-        if skills is None:
-            skills = []
-        self.skills = skills
+        self.skills = []
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    def __init__(self, name: str, skills: list | None = None) -> None:
-        if skills is None:
-            skills = ["JavaScript", "HTML", "CSS"]
-        super().__init__(name=name, skills=skills)
+    def __init__(self, name: str) -> None:
+        super().__init__(name=name)
+        self.skills += ["JavaScript", "HTML", "CSS"]
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -21,10 +18,10 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    def __init__(self, name: str, skills: list | None = None) -> None:
-        if skills is None:
-            skills = ["Python", "SQL", "Django"]
-        super().__init__(name=name, skills=skills)
+
+    def __init__(self, name: str) -> None:
+        super().__init__(name=name)
+        self.skills += ["Python", "SQL", "Django"]
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -33,19 +30,15 @@ class BackendDeveloper(SoftwareEngineer):
 
 class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
-        skills = ["Java", "Android studio"]
-        super().__init__(name=name, skills=skills)
+        super().__init__(name=name)
+        self.skills += ["Java", "Android studio"]
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(FrontendDeveloper, BackendDeveloper, SoftwareEngineer):
-    def __init__(self, name: str) -> None:
-        skills = ["JavaScript", "HTML", "CSS", "Python", "SQL", "Django"]
-        super().__init__(name=name, skills=skills)
-
+class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
