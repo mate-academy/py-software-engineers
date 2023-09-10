@@ -94,7 +94,7 @@ def test_create_powerful_api_method(engineer, printed_message):
 def test_create_smooth_mobile_app_method(engineer, printed_message):
     f = io.StringIO()
     with redirect_stdout(f):
-        assert engineer.create_smooth_mobile_app() == "Ads every three swipes"
+        assert engineer.create_smooth_mobile_app == "Ads every three swipes"
     assert f.getvalue() == printed_message
 
 
