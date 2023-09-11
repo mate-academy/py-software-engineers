@@ -88,7 +88,7 @@ It should print a following string `"{name} is creating a mobile app..."`
 where `name` is the `name` of engineer and return UX of the created app: `"Ads every three swipes"`.
 
 ```python
-app = android_dev.create_smooth_mobile_app  # "Beth is creating a mobile app..."
+app = android_dev.create_smooth_mobile_app()  # "Beth is creating a mobile app..."
 # app == "Ads every three swipes"
 ```
 
