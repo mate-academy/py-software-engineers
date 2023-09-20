@@ -65,9 +65,7 @@ It should print a following string `"{name} is creating an API..."`
 where `name` is the `name` of engineer and return address of the API: `"http://127.0.0.1:8000"`.
 
 ```python
-address = backend_dev.create_powerful_api  # "Bob is creating an API..."
-# address == "http://127.0.0.1:8000"
-```
+
 
 Write class `AndroidDeveloper`, 
 which should be a child of class `SoftwareEngineer`. 
