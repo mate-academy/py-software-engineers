@@ -64,6 +64,11 @@ It should have one additional method: `create_powerful_api`.
 It should print a following string `"{name} is creating an API..."`
 where `name` is the `name` of engineer and return address of the API: `"http://127.0.0.1:8000"`.
 
+```python
+address = backend_dev.create_powerful_api()  # "Bob is creating an API..."
+# address == "http://127.0.0.1:8000"
+```
+
 Write class `AndroidDeveloper`, 
 which should be a child of class `SoftwareEngineer`. 
 Its `__init__` method also takes the `name` of the engineer. 
@@ -83,7 +88,7 @@ It should print a following string `"{name} is creating a mobile app..."`
 where `name` is the `name` of engineer and return UX of the created app: `"Ads every three swipes"`.
 
 ```python
-app = android_dev.create_smooth_mobile_app  # "Beth is creating a mobile app..."
+app = android_dev.create_smooth_mobile_app()  # "Beth is creating a mobile app..."
 # app == "Ads every three swipes"
 ```
 
