@@ -64,9 +64,6 @@ It should have one additional method: `create_powerful_api`.
 It should print a following string `"{name} is creating an API..."`
 where `name` is the `name` of engineer and return address of the API: `"http://127.0.0.1:8000"`.
 
-```python
-
-
 Write class `AndroidDeveloper`, 
 which should be a child of class `SoftwareEngineer`. 
 Its `__init__` method also takes the `name` of the engineer. 
