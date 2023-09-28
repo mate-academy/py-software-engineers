@@ -42,4 +42,3 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
         print(f"{self.name} started creating a web application...")
         create_powerful_api = self.create_powerful_api()
         create_awesome_web_page = self.create_awesome_web_page()
-        return create_powerful_api, create_awesome_web_page
