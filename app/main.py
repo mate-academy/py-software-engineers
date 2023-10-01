@@ -38,7 +38,6 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
-    pass
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
