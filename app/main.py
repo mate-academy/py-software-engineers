@@ -3,7 +3,7 @@ from __future__ import annotations
 
 class SoftwareEngineer:
     def __init__(self, name: str) -> None:
-        self.name = name
+        self.name: str = name
         self.skills: list[str] = []
 
     def learn_skill(self, skill: str) -> None:
