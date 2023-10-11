@@ -68,9 +68,6 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
-    def __init__(self, name: str) -> None:
-        super().__init__(name)
-
     def create_web_application(self) -> None:
         """
         Displays an info message and creates API, Web Page.
