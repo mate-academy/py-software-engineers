@@ -1,6 +1,3 @@
-from typing import List
-
-
 class SoftwareEngineer:
     def __init__(self, name: str) -> None:
         self.name = name
@@ -45,3 +42,4 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
         print(f"{self.name} started creating a web application...")
         api_address = self.create_powerful_api()
         webpage = self.create_awesome_web_page()
+        return api_address, webpage
