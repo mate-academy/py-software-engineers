@@ -1,6 +1,3 @@
-import typing
-
-
 class SoftwareEngineer:
     def __init__(self, name: str, skills=None) -> None:
         self.name = name
