@@ -1,20 +1,18 @@
 class SoftwareEngineer:
-    def __init__(self, name: str, skills=None) -> None:
+    def __init__(self, name: str) -> None:
         self.name = name
         self.skills = []
-        if skills:
-            self.skills = skills
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    clas_reqs = ["JavaScript", "HTML", "CSS"]
+    skills = ["JavaScript", "HTML", "CSS"]
 
-    def __init__(self, name: str, skills=None) -> None:
-        super().__init__(name, skills)
-        self.skills.extend(FrontendDeveloper.clas_reqs)
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        self.skills.extend(FrontendDeveloper.skills)
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -22,11 +20,11 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    clas_reqs = ["Python", "SQL", "Django"]
+    skills = ["Python", "SQL", "Django"]
 
-    def __init__(self, name: str, skills=None) -> None:
-        super().__init__(name, skills)
-        self.skills.extend(BackendDeveloper.clas_reqs)
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        self.skills.extend(BackendDeveloper.skills)
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -34,11 +32,11 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-    clas_reqs = ["Java", "Android studio"]
+    skills = ["Java", "Android studio"]
 
-    def __init__(self, name: str, skills=None) -> None:
-        super().__init__(name, skills)
-        self.skills.extend(AndroidDeveloper.clas_reqs)
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        self.skills.extend(AndroidDeveloper.skills)
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
