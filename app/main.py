@@ -46,8 +46,7 @@ class FullStackDeveloper(AndroidDeveloper,
                          FrontendDeveloper,
                          SoftwareEngineer,
                          ):
-    skills = (FrontendDeveloper.skills +
-              BackendDeveloper.skills)
+    skills = (FrontendDeveloper.skills + BackendDeveloper.skills)
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
