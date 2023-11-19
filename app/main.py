@@ -52,4 +52,3 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
             f"Web Application created with API at {api_address}"
             f"and Web Page:\n{web_page_code}"
         )
-        
