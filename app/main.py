@@ -8,7 +8,7 @@ class SoftwareEngineer:
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
-        self.skills.sort()
+        self.skills = sorted(self.skills)
 
 
 class FrontendDeveloper(SoftwareEngineer):
@@ -43,7 +43,10 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
-        super().__init__(name)
+        BackendDeveloper.__init__(self, name)
+        FrontendDeveloper.__init__(self, name)
+        self.skills = self.skills + BackendDeveloper.skills + FrontendDeveloper.skills
+
 
     def create_web_application(self) -> str:
         print(f"{self.name} started creating a web application...")
