@@ -8,7 +8,7 @@ class SoftwareEngineer:
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
-        self.skills = sorted(self.skills)
+        self.skills.sort()
 
 
 class FrontendDeveloper(SoftwareEngineer):
