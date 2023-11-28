@@ -1,6 +1,5 @@
 from typing import List
 
-
 class SoftwareEngineer:
     def __init__(self, name: str) -> None:
         self.name: str = name
@@ -10,45 +9,36 @@ class SoftwareEngineer:
         self.skills.append(skill)
         self.skills = sorted(self.skills)
 
-
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills: List[str] = ["JavaScript", "HTML", "CSS"]
+        self.skills: List[str] = sorted(["JavaScript", "HTML", "CSS"])
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
         return "<h1>Hello world</h1>"
 
-
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills: List[str] = ["Python", "SQL", "Django"]
+        self.skills: List[str] = sorted(["Python", "SQL", "Django"])
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
         return "http://127.0.0.1:8000"
 
-
 class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills: List[str] = ["Java", "Android studio"]
+        self.skills: List[str] = sorted(["Java", "Android studio"])
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
         return "Ads every three swipes"
 
-
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = (
-            self.skills
-            + BackendDeveloper(name).skills
-            + FrontendDeveloper(name).skills
-        )
 
     def create_web_application(self) -> str:
         print(f"{self.name} started creating a web application...")
