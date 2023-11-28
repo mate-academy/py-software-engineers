@@ -1,54 +1,51 @@
-from typing import List
-
-
 class SoftwareEngineer:
-    def __init__(self, name: str) -> None:
-        self.name: str = name
-        self.skills: List[str] = []
+    def __init__(self, name: str):
+        self.name = name
+        self.skills = []
 
-    def learn_skill(self, skill: str) -> None:
+    def learn_skill(self, skill: str):
         self.skills.append(skill)
         self.skills.sort()
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    def __init__(self, name: str) -> None:
+    def __init__(self, name: str):
         super().__init__(name)
-        self.skills: List[str] = sorted(["JavaScript", "HTML", "CSS"])
+        self.skills = sorted(["JavaScript", "HTML", "CSS"])
 
-    def create_awesome_web_page(self) -> str:
+    def create_awesome_web_page(self):
         print(f"{self.name} is creating a webpage...")
         return "<h1>Hello world</h1>"
 
 
 class BackendDeveloper(SoftwareEngineer):
-    def __init__(self, name: str) -> None:
+    def __init__(self, name: str):
         super().__init__(name)
-        self.skills: List[str] = sorted(["Python", "SQL", "Django"])
+        self.skills = sorted(["Python", "SQL", "Django"])
 
-    def create_powerful_api(self) -> str:
+    def create_powerful_api(self):
         print(f"{self.name} is creating an API...")
         return "http://127.0.0.1:8000"
 
 
 class AndroidDeveloper(SoftwareEngineer):
-    def __init__(self, name: str) -> None:
+    def __init__(self, name: str):
         super().__init__(name)
-        self.skills: List[str] = sorted(["Java", "Android studio"])
+        self.skills = sorted(["Java", "Android studio"])
 
-    def create_smooth_mobile_app(self) -> str:
+    def create_smooth_mobile_app(self):
         print(f"{self.name} is creating a mobile app...")
         return "Ads every three swipes"
 
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
-    def __init__(self, name: str) -> None:
+    def __init__(self, name: str):
         super().__init__(name)
 
-    def create_web_application(self) -> str:
+    def create_web_application(self):
         print(f"{self.name} started creating a web application...")
-        api_address: str = self.create_powerful_api()
-        web_page_code: str = self.create_awesome_web_page()
+        api_address = self.create_powerful_api()
+        web_page_code = self.create_awesome_web_page()
         return (
             f"Web Application created with API at {api_address} "
             f"and Web Page:\n{web_page_code}"
