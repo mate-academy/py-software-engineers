@@ -51,6 +51,7 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
         api_address: str = self.create_powerful_api()
         web_page_code: str = self.create_awesome_web_page()
         return (
-            f"Web Application created with API at {api_address}"
+            f"Web Application created with API at {api_address} "
             f"and Web Page:\n{web_page_code}"
         )
+
