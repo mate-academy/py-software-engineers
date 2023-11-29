@@ -39,8 +39,11 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
-    def __init__(self, name: str) -> str:
+    def __init__(self, name: str) -> None:
         super().__init__(name)
+        # Викликайте конструктори батьківських класів відповідним чином
+        FrontendDeveloper.__init__(self, name)
+        BackendDeveloper.__init__(self, name)
 
     def create_web_application(self) -> str:
         print(f"{self.name} started creating a web application...")
