@@ -39,7 +39,7 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
-    def __init__(self, name: str) -> None:
+    def __init__(self, name: str) -> str:
         super().__init__(name)
 
     def create_web_application(self) -> str:
