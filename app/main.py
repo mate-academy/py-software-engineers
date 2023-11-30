@@ -1,5 +1,6 @@
 from typing import List
 
+
 class SoftwareEngineer:
     def __init__(self, name: str) -> None:
         self.name: str = name
@@ -45,4 +46,3 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
         api_address = self.create_powerful_api()
         web_page_code = self.create_awesome_web_page()
         return api_address, web_page_code
-
