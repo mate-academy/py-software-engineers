@@ -1,7 +1,10 @@
+from __future__ import annotations
+
+
 class SoftwareEngineer:
 
-    def __init__(self, name: str, skills=None) -> None:
-        self.skills = [] if skills is None else skills
+    def __init__(self, name: str) -> None:
+        self.skills = []
         self.name = name
 
     def learn_skill(self, skill: str) -> None:
@@ -10,8 +13,8 @@ class SoftwareEngineer:
 
 class FrontendDeveloper(SoftwareEngineer):
 
-    def __init__(self, name: str, skills=None) -> None:
-        super().__init__(name, skills=[])
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
         self.skills += ["JavaScript", "HTML", "CSS"]
 
     #
@@ -22,8 +25,8 @@ class FrontendDeveloper(SoftwareEngineer):
 
 class BackendDeveloper(SoftwareEngineer):
 
-    def __init__(self, name: str, skills=None) -> None:
-        super().__init__(name, skills=[])
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
         self.skills += ["Python", "SQL", "Django"]
 
     def create_powerful_api(self) -> str:
@@ -33,8 +36,8 @@ class BackendDeveloper(SoftwareEngineer):
 
 class AndroidDeveloper(SoftwareEngineer):
 
-    def __init__(self, name: str, skills=None) -> None:
-        super().__init__(name, skills=[])
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
         self.skills += ["Java", "Android studio"]
 
     def create_smooth_mobile_app(self) -> str:
