@@ -46,7 +46,7 @@ class FullStackDeveloper(
     FrontendDeveloper,
     SoftwareEngineer
 ):
-    skills = ["Python", "SQL", "Django", "JavaScript", "CSS", "HTML"]
+    skills = BackendDeveloper.skills + FrontendDeveloper.skills
 
     def __init__(self, name: str) -> None:
         super().__init__(name=name)
