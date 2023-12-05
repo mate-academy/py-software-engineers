@@ -4,7 +4,7 @@ class SoftwareEngineer:
     def __init__(self, name: str) -> None:
         self.name = name
 
-    def learn_skill(self, skill: str) -> None:
+    def learn_skill(self, skill: list) -> None:
         self.skills.append(skill)
 
 
