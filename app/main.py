@@ -31,8 +31,6 @@ class BackendDeveloper(SoftwareEngineer):
 
 class AndroidDeveloper(SoftwareEngineer):
 
-    skills = ["Java", "Android studio"]
-
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["Java", "Android studio"])
