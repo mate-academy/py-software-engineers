@@ -1,7 +1,7 @@
 class SoftwareEngineer:
     def __init__(self, name: str) -> None:
         self.name = name
-        self.skills = None or []
+        self.skills = []
 
     def learn_skill(self, skill: str) -> None:
         return self.skills.append(skill)
@@ -10,8 +10,7 @@ class SoftwareEngineer:
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.default_skills = ["JavaScript", "HTML", "CSS"]
-        self.skills.extend(self.default_skills)
+        self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_awesome_web_page(self) -> str:
         print(self.name, "is creating a webpage...")
@@ -21,8 +20,7 @@ class FrontendDeveloper(SoftwareEngineer):
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.default_skills = ["Python", "SQL", "Django"]
-        self.skills.extend(self.default_skills)
+        self.skills.extend(["Python", "SQL", "Django"])
 
     def create_powerful_api(self) -> str:
         print(self.name, "is creating an API...")
@@ -32,8 +30,7 @@ class BackendDeveloper(SoftwareEngineer):
 class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.default_skills = ["Java", "Android studio"]
-        self.skills.extend(self.default_skills)
+        self.skills.extend(["Java", "Android studio"])
 
     def create_smooth_mobile_app(self) -> str:
         print(self.name, "is creating a mobile app...")
