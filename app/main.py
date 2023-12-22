@@ -43,27 +43,3 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
         print(self.name, "started creating a web application...")
         self.create_powerful_api()
         self.create_awesome_web_page()
-
-
-if __name__ == "__main__":
-    engineer = SoftwareEngineer("Max")
-    front_dev = FrontendDeveloper("Alisa")
-    backend_dev = BackendDeveloper("Bob")
-    android_dev = AndroidDeveloper("Beth")
-    full_stack_dev = FullStackDeveloper("Tom")
-    engineer.learn_skill("Python")
-
-    print(backend_dev.skills)
-    print()
-    print(engineer.skills)
-    print()
-    print(front_dev.default_skills)
-    print()
-    front_dev.create_awesome_web_page()
-    print(front_dev.create_awesome_web_page())
-    print()
-    print(backend_dev.create_powerful_api())
-    print()
-    print(android_dev.create_smooth_mobile_app())
-    print()
-    full_stack_dev.create_web_application()
