@@ -4,8 +4,7 @@ class SoftwareEngineer:
             name: str
     ) -> None:
         self.name = name
-
-    skills = []
+        self.skills = []
 
     def learn_skill(
             self,
@@ -20,8 +19,7 @@ class FrontendDeveloper(SoftwareEngineer):
             name: str
     ) -> None:
         super().__init__(name)
-
-    skills = ["JavaScript", "HTML", "CSS"]
+        self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -34,8 +32,7 @@ class BackendDeveloper(SoftwareEngineer):
             name: str
     ) -> None:
         super().__init__(name)
-
-    skills = ["Python", "SQL", "Django"]
+        self.skills.extend(["Python", "SQL", "Django"])
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -48,8 +45,7 @@ class AndroidDeveloper(SoftwareEngineer):
             name: str
     ) -> None:
         super().__init__(name)
-
-    skills = ["Java", "Android studio"]
+        self.skills.extend(["Java", "Android studio"])
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
@@ -57,15 +53,7 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
-    def __init__(
-            self,
-            name: str
-    ) -> None:
-        super().__init__(name)
-
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
         self.create_awesome_web_page()
-
-    skills = [*BackendDeveloper.skills, *FrontendDeveloper.skills]
