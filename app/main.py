@@ -4,7 +4,7 @@ class SoftwareEngineer:
         self.skills = []
 
     def learn_skill(self, skill: str) -> None:
-        self.skills.append(skill)
+        self.skills.extend(skill.split(", "))
 
     def __str__(self) -> str:
         return str(self.skills)
@@ -13,9 +13,7 @@ class SoftwareEngineer:
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name=name)
-        super().learn_skill("JavaScript")
-        super().learn_skill("HTML")
-        super().learn_skill("CSS")
+        super().learn_skill("JavaScript, HTML, CSS")
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -25,9 +23,7 @@ class FrontendDeveloper(SoftwareEngineer):
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name=name)
-        super().learn_skill("Python")
-        super().learn_skill("SQL")
-        super().learn_skill("Django")
+        super().learn_skill("Python, SQL, Django")
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
