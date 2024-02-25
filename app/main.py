@@ -12,9 +12,6 @@ class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["JavaScript", "HTML", "CSS"])
-        # default_skills = ["JavaScript", "HTML", "CSS"]
-        # for default_skill in default_skills:
-        #     self.learn_skill(default_skill)
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -25,9 +22,6 @@ class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["Python", "SQL", "Django"])
-        # default_skills = ["Python", "SQL", "Django"]
-        # for default_skill in default_skills:
-        #     self.learn_skill(default_skill)
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -38,9 +32,6 @@ class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["Java", "Android studio"])
-        # default_skills = ["Java", "Android studio"]
-        # for default_skill in default_skills:
-        #     self.learn_skill(default_skill)
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
