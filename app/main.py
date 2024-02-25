@@ -4,15 +4,19 @@ class SoftwareEngineer:
         self.skills = []
 
     def learn_skill(self, skill: str) -> None:
-        self.skills.append(skill)
+        if skill not in self.skills:
+            self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["JavaScript", "HTML", "CSS"])
+        # default_skills = ["JavaScript", "HTML", "CSS"]
+        # for default_skill in default_skills:
+        #     self.learn_skill(default_skill)
 
-    def create_awesome_web_page(self) -> None:
+    def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
         return "<h1>Hello world</h1>"
 
@@ -21,6 +25,9 @@ class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["Python", "SQL", "Django"])
+        # default_skills = ["Python", "SQL", "Django"]
+        # for default_skill in default_skills:
+        #     self.learn_skill(default_skill)
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -37,10 +44,9 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(FrontendDeveloper, BackendDeveloper, AndroidDeveloper):
+class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills.extend(self.skills)
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
