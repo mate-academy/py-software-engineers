@@ -38,6 +38,9 @@ class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["Java", "Android studio"])
+        # default_skills = ["Java", "Android studio"]
+        # for default_skill in default_skills:
+        #     self.learn_skill(default_skill)
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
