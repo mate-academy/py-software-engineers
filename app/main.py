@@ -9,8 +9,12 @@ class SoftwareEngineer:
 
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
-        super().__init__(name)
-        skills = ["JavaScript", "HTML", "CSS"]
+        super().__init__(name=name)
+        skills = ([
+            "JavaScript",
+            "HTML",
+            "CSS"
+        ])
         self.skills.extend(skills)
 
     def create_awesome_web_page(self) -> str:
@@ -20,8 +24,12 @@ class FrontendDeveloper(SoftwareEngineer):
 
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
-        super().__init__(name)
-        skills = ["Python", "SQL", "Django"]
+        super().__init__(name=name)
+        skills = ([
+            "Python",
+            "SQL",
+            "Django"
+        ])
         self.skills.extend(skills)
 
     def create_powerful_api(self) -> str:
@@ -31,8 +39,11 @@ class BackendDeveloper(SoftwareEngineer):
 
 class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
-        super().__init__(name)
-        skills = ["Java", "Android studio"]
+        super().__init__(name=name)
+        skills = ([
+            "Java",
+            "Android studio"
+        ])
         self.skills.extend(skills)
 
     def create_smooth_mobile_app(self) -> str:
