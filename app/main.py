@@ -4,8 +4,9 @@ class SoftwareEngineer:
     def __init__(self, name: str) -> None:
         self.name = name
 
-    def learn_skill(self, skill: str) -> None:
-        self.skills.append(skill)
+    @classmethod
+    def learn_skill(cls, skill: str) -> None:
+        cls.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
