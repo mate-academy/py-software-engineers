@@ -9,7 +9,7 @@ class SoftwareEngineer:
 
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
-        super().__init__(name)
+        self.name = name
         self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_awesome_web_page(self) -> str:
