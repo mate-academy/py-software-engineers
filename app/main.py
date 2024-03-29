@@ -59,4 +59,3 @@ class FullStackDeveloper(
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
         self.create_awesome_web_page()
-
