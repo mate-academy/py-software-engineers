@@ -50,7 +50,7 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(
-    BackendDeveloper, FrontendDeveloper, SoftwareEngineer
+    BackendDeveloper, FrontendDeveloper
 ):
 
     def create_web_application(self) -> None:
