@@ -42,7 +42,6 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def create_web_application(self) -> Tuple[str, str]:
-        #I DON'T KNOW WHAT TYPE OF ANNOTATION IT IS
         print(f"{self.name} started creating a web application...")
         api_address = self.create_powerful_api()
         web_page_code = self.create_awesome_web_page()
