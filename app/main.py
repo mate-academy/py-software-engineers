@@ -1,6 +1,3 @@
-from typing import Tuple
-
-
 class SoftwareEngineer:
     def __init__(self, name: str) -> None:
         self.name = name
@@ -41,8 +38,7 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
-    def create_web_application(self) -> Tuple[str, str]:
+    def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
-        api_address = self.create_powerful_api()
-        web_page_code = self.create_awesome_web_page()
-        return api_address, web_page_code
+        self.create_powerful_api()
+        self.create_awesome_web_page()
