@@ -8,10 +8,6 @@ class SoftwareEngineer:
         self.skills.append(skill)
 
 
-class SkillsMixins(SoftwareEngineer):
-    skills = []
-
-
 class FrontendDeveloper(SoftwareEngineer):
     skills = ["JavaScript", "HTML", "CSS"]
 
