@@ -1,5 +1,4 @@
 class SoftwareEngineer:
-
     def __init__(self, name: str) -> None:
         self.name = name
         self.skills = []
@@ -42,7 +41,6 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
-
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
