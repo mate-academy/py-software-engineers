@@ -3,6 +3,9 @@ class SoftwareEngineer:
 
     def __init__(self, name: str) -> None:
         self.name = name
+        self.skills = [
+            skill for skill in self.skills if skill not in self.skills
+        ]
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
@@ -10,7 +13,10 @@ class SoftwareEngineer:
 
 class FrontendDeveloper(SoftwareEngineer):
     skills: list[str] = ["JavaScript", "HTML", "CSS"]
-    skills.extend(SoftwareEngineer.skills)
+
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        self.skills.extend(FrontendDeveloper.skills)
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -19,7 +25,11 @@ class FrontendDeveloper(SoftwareEngineer):
 
 class BackendDeveloper(SoftwareEngineer):
     skills: list[str] = ["Python", "SQL", "Django"]
-    skills.extend(SoftwareEngineer.skills)
+
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        # self.skills = [skill for skill in self.skills]
+        self.skills.extend(BackendDeveloper.skills)
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -28,7 +38,11 @@ class BackendDeveloper(SoftwareEngineer):
 
 class AndroidDeveloper(SoftwareEngineer):
     skills: list[str] = ["Java", "Android studio"]
-    skills.extend(SoftwareEngineer.skills)
+
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        # self.skills = [skill for skill in self.skills]
+        self.skills.extend(AndroidDeveloper.skills)
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
@@ -36,9 +50,8 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
-    skills: list[str] = []
-    skills.extend(FrontendDeveloper.skills)
-    skills.extend(BackendDeveloper.skills)
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
