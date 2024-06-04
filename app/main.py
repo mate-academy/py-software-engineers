@@ -28,7 +28,6 @@ class BackendDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        # self.skills = [skill for skill in self.skills]
         self.skills.extend(BackendDeveloper.skills)
 
     def create_powerful_api(self) -> str:
@@ -41,7 +40,6 @@ class AndroidDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        # self.skills = [skill for skill in self.skills]
         self.skills.extend(AndroidDeveloper.skills)
 
     def create_smooth_mobile_app(self) -> str:
