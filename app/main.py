@@ -8,16 +8,12 @@ class SoftwareEngineer:
 
 
 class BackendDeveloperMixin:
-    backend_skills = ["Python", "SQL", "Django"]
-
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
         return "http://127.0.0.1:8000"
 
 
 class FrontendDeveloperMixin:
-    frontend_skills = ["JavaScript", "HTML", "CSS"]
-
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
         return "<h1>Hello world</h1>"
@@ -27,13 +23,13 @@ class FrontendDeveloper(FrontendDeveloperMixin, SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = self.frontend_skills
+        self.skills = ["JavaScript", "HTML", "CSS"]
 
 
 class BackendDeveloper(BackendDeveloperMixin, SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = self.backend_skills
+        self.skills = ["Python", "SQL", "Django"]
 
 
 class AndroidDeveloper(SoftwareEngineer):
@@ -47,13 +43,12 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(
-    BackendDeveloperMixin,
     FrontendDeveloperMixin,
-    SoftwareEngineer
+    BackendDeveloper
 ):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = self.frontend_skills + self.backend_skills
+        self.skills += ["JavaScript", "HTML", "CSS"]
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
