@@ -21,9 +21,8 @@ class FrontendDeveloper(SoftwareEngineer):
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.learn_skill("Python")
-        self.learn_skill("SQL")
-        self.learn_skill("Django")
+        backend_skils = ["Python", "SQL", "Django"]
+        self.skills.extend(backend_skils)
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -33,8 +32,8 @@ class BackendDeveloper(SoftwareEngineer):
 class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.learn_skill("Java")
-        self.learn_skill("Android studio")
+        android_dev_skils = ["Java", "Android studio"]
+        self.skills.extend(android_dev_skils)
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
