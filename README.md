@@ -16,7 +16,7 @@ takes a `skill` of string type and should add it to the `skills` list.
 ```python
 engineer = SoftwareEngineer("Max")
 # engineer.skills == [] 
-engineer.learn_skill("Python")
+learn_skill("Python")
 # engineer.skills == ["Python"] 
 ```
 
