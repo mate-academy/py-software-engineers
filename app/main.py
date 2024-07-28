@@ -4,39 +4,33 @@ class SoftwareEngineer:
         self.skills = []
 
     def learn_skill(self, skill: str) -> None:
-        self.skills.append(skill)
+        self.skills.extend(list(skill.split(",")))
 
 
-class SkillMixin:
-    def to_add_skills(self, list_skills: list) -> None:
-        for skill in list_skills:
-            self.learn_skill(skill)
-
-
-class FrontendDeveloper(SoftwareEngineer, SkillMixin):
+class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.to_add_skills(["JavaScript", "HTML", "CSS"])
+        self.learn_skill(",".join(["JavaScript", "HTML", "CSS"]))
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
         return "<h1>Hello world</h1>"
 
 
-class BackendDeveloper(SoftwareEngineer, SkillMixin):
+class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.to_add_skills(["Python", "SQL", "Django"])
+        self.learn_skill(",".join(["Python", "SQL", "Django"]))
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
         return "http://127.0.0.1:8000"
 
 
-class AndroidDeveloper(SoftwareEngineer, SkillMixin):
+class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.to_add_skills(["Java", "Android studio"])
+        self.learn_skill(",".join(["Java", "Android studio"]))
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
