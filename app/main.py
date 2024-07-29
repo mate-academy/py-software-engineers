@@ -1,4 +1,5 @@
 class SoftwareEngineer:
+
     def __init__(self, name: str) -> None:
         self.name = name
         self.skills = []
@@ -12,7 +13,8 @@ class FrontendDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = FrontendDeveloper.base_skills
+        self.skills = []
+        self.skills.extend(FrontendDeveloper.base_skills)
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -24,7 +26,8 @@ class BackendDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = BackendDeveloper.base_skills
+        self.skills = []
+        self.skills.extend(BackendDeveloper.base_skills)
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -36,7 +39,8 @@ class AndroidDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = AndroidDeveloper.base_skills
+        self.skills = []
+        self.skills.extend(AndroidDeveloper.base_skills)
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
@@ -44,12 +48,14 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
+
     def __init__(self, name: str) -> None:
-        super().__init__(name)
-        self.skills = (
-            BackendDeveloper.base_skills
-            + FrontendDeveloper.base_skills
-        )
+        self.name = name
+        self.skills = []
+        for cls in self.__class__.__mro__:
+            if cls in (object, FullStackDeveloper, SoftwareEngineer):
+                continue
+            self.skills.extend(cls.base_skills)
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
