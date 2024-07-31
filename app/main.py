@@ -1,19 +1,16 @@
 class SoftwareEngineer:
-    skills = []
-
     def __init__(self, name: str) -> None:
         self.name = name
+        self.skills = []
 
-    @classmethod
-    def learn_skill(cls, skill: str) -> None:
-        cls.skills.append(skill)
+    def learn_skill(self, skill: str) -> None:
+        self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    skills = ["JavaScript", "HTML", "CSS"]
-
     def __init__(self, name: str) -> None:
-        self.name = name
+        super().__init__(name)
+        self.skills = ["JavaScript", "HTML", "CSS"]
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -21,10 +18,9 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    skills = ["Python", "SQL", "Django"]
-
     def __init__(self, name: str) -> None:
-        self.name = name
+        super().__init__(name)
+        self.skills = ["Python", "SQL", "Django"]
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -32,10 +28,9 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-    skills = ["Java", "Android studio"]
-
     def __init__(self, name: str) -> None:
-        self.name = name
+        super().__init__(name)
+        self.skills = ["Java", "Android studio"]
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
@@ -43,12 +38,32 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
-    skills = BackendDeveloper.skills + FrontendDeveloper.skills
+    # skills = BackendDeveloper.skills + FrontendDeveloper.skills
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
+        for skill in BackendDeveloper(name).skills:
+            self.learn_skill(skill)
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
         self.create_awesome_web_page()
+
+
+full_stack_dev = FullStackDeveloper("Tom")
+print(full_stack_dev.skills)  # == [
+# #     "Python",
+# #     "SQL",
+# #     "Django",
+# #     "JavaScript",
+# #     "HTML",
+# #     "CSS",
+# # ]
+#
+full_stack_dev.create_web_application()
+# # Tom started creating a web application...
+# # Tom is creating an API...
+# # Tom is creating a webpage...
+
+# print(type(FullStackDeveloper.mro()))
