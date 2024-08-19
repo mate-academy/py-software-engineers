@@ -35,3 +35,16 @@ class AndroidDeveloper(SoftwareEngineer):
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
         return "Ads every three swipes"
+
+
+class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        self.skills = []
+        self.skills += (BackendDeveloper(self.name).skills
+                        + FrontendDeveloper(self.name).skills)
+
+    def create_web_application(self) -> None:
+        print(f"{self.name} started creating a web application...")
+        self.create_powerful_api()
+        self.create_awesome_web_page()
