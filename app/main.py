@@ -1,6 +1,3 @@
-from __future__ import annotations
-
-
 class SoftwareEngineer:
     def __init__(self, name: str) -> None:
         self.name = name
@@ -8,9 +5,6 @@ class SoftwareEngineer:
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
-
-    def __lt__(self, other: SoftwareEngineer) -> bool:
-        return self.skills < other.skills
 
 
 class FrontendDeveloper(SoftwareEngineer):
