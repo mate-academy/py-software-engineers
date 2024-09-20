@@ -45,10 +45,7 @@ class FullStackDeveloper(
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = (
-            BackendDeveloper(self.name).skills
-            + FrontendDeveloper(self.name).skills
-        )
+        self.skills += ["JavaScript", "HTML", "CSS"]
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
