@@ -1,5 +1,4 @@
 class SoftwareEngineer:
-
     def __init__(self, name: str) -> None:
         self.name = name
         self.skills = []
@@ -14,7 +13,7 @@ class FrontendDeveloper(SoftwareEngineer):
         self.skills += [
             "JavaScript",
             "HTML",
-            "CSS",
+            "CSS"
         ]
 
     def create_awesome_web_page(self) -> str:
@@ -28,7 +27,7 @@ class BackendDeveloper(SoftwareEngineer):
         self.skills += [
             "Python",
             "SQL",
-            "Django",
+            "Django"
         ]
 
     def create_powerful_api(self) -> str:
@@ -41,7 +40,7 @@ class AndroidDeveloper(SoftwareEngineer):
         super().__init__(name)
         self.skills += [
             "Java",
-            "Android studio",
+            "Android studio"
         ]
 
     def create_smooth_mobile_app(self) -> str:
