@@ -1,6 +1,5 @@
 
 class SoftwareEngineer:
-    # skills = []
 
     def __init__(self, name: str) -> None:
         self.name = name
@@ -41,10 +40,8 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(
-    AndroidDeveloper,
     BackendDeveloper,
     FrontendDeveloper,
-    SoftwareEngineer
 ):
     def __init__(self, name: str) -> None:
         super().__init__(name)
