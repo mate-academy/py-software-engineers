@@ -8,7 +8,7 @@ class SoftwareEngineer:
 
     def learn_skill(self, skill: str) -> None:
         if skill not in self.skills:
-            self.skills.append(skill)
+            self.skills += [skill]
 
 
 class FrontendDeveloper(SoftwareEngineer):
