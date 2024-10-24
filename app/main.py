@@ -33,8 +33,7 @@ class BackendDeveloper(SoftwareEngineer):
 class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        # Corrected the skill name to match the test expectations
-        self.skills.extend(["Java", "Android studio"])
+        self.skills.extend(["Java", "Android studio"])  # Use "Android Studio"
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
@@ -43,7 +42,10 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
-        super().__init__(name)
+        SoftwareEngineer.__init__(self, name)
+        self.skills = sorted(
+            set(FrontendDeveloper(name).skills + BackendDeveloper(name).skills)
+        )
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
