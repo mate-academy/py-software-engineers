@@ -123,6 +123,7 @@ def test_create_web_application_method(engineer, printed_messages):
 
 
 @pytest.mark.parametrize(
+    "function,result",
     [
         (
                 SoftwareEngineer.__init__,
@@ -130,7 +131,7 @@ def test_create_web_application_method(engineer, printed_messages):
                  "return": type(None)}
         ),
         (
-                learn_skill,
+                SoftwareEngineer.learn_skill,
                 {"skill": str,
                  "return": type(None)}
         ),
