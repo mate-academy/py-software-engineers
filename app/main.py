@@ -41,7 +41,7 @@ class AndroidDeveloper(SoftwareEngineer, CreatingMixin):
 
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper, CreatingMixin):
-    skills = [] + BackendDeveloper.skills + FrontendDeveloper.skills
+    skills = ["JavaScript", "HTML", "CSS", "Python", "SQL", "Django"]
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
