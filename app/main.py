@@ -10,8 +10,7 @@ class SoftwareEngineer:
 
     def __str__(self) -> str:
         return (f"{self.name}, "
-                f"Skills: {", ".join(self.skills)
-                           or "No skills yet"}")
+                f"Skills: {', '.join(self.skills) or 'No skills yet'}")
 
 
 class FrontendDeveloper(SoftwareEngineer):
