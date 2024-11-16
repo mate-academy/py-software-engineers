@@ -51,11 +51,11 @@ class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
         FrontendDeveloper.__init__(self, name)
         BackendDeveloper.__init__(self, name)
         # Combine skills from both parent classes, ensuring no duplicates
-        self.skills = list(set(FrontendDeveloper.skills +
-                               BackendDeveloper.skills))
+        self.skills = (
+            list(set(FrontendDeveloper.skills + BackendDeveloper.skills))
+        )
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
         self.create_awesome_web_page()
-
