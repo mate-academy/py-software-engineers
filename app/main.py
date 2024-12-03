@@ -38,9 +38,9 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(FrontendDeveloper,
+class FullStackDeveloper(SoftwareEngineer, FrontendDeveloper,
                          BackendDeveloper, AndroidDeveloper,
-                         SoftwareEngineer):
+                         ):
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills = ["Python", "SQL",
