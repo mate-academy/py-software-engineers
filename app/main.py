@@ -6,7 +6,7 @@ class SoftwareEngineer:
     def learn_skill(self, skill: str) -> None:
         if isinstance(skill, str):
             self.skills.append(skill)
-        else:
+        if isinstance(skill, list):
             self.skills.extend(skill)
 
 
@@ -42,9 +42,17 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
-        super().__init__(name)
+        SoftwareEngineer.__init__(self, name)
+        self.learn_skill(
+            ["JavaScript",
+             "HTML",
+             "CSS",
+             "Python",
+             "SQL",
+             "Django"]
+        )
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
-        BackendDeveloper.create_powerful_api(self)
-        FrontendDeveloper.create_awesome_web_page(self)
+        self.create_powerful_api()
+        self.create_awesome_web_page()
