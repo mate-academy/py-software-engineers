@@ -40,6 +40,7 @@ class AndroidDeveloper(SoftwareEngineer):
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
+        FrontendDeveloper.__init__(self, name)
         self.skills = [
             "Python",
             "SQL",
