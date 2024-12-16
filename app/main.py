@@ -12,7 +12,7 @@ class FrontendDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        for skill in self.FrontendDeveloper_skills:
+        for skill in self.__class__.FrontendDeveloper_skills:
             self.skills.append(skill)
 
     def create_awesome_web_page(self) -> str:
@@ -25,7 +25,7 @@ class BackendDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        for skill in self.BackendDeveloper_skills:
+        for skill in self.__class__.BackendDeveloper_skills:
             self.skills.append(skill)
 
     def create_powerful_api(self) -> str:
@@ -38,7 +38,7 @@ class AndroidDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        for skill in self.AndroidDeveloper_skills:
+        for skill in self.__class__.AndroidDeveloper_skills:
             self.skills.append(skill)
 
     def create_smooth_mobile_app(self) -> str:
@@ -46,8 +46,8 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(FrontendDeveloper,
-                         BackendDeveloper, SoftwareEngineer):
+class FullStackDeveloper(BackendDeveloper,
+                         FrontendDeveloper, SoftwareEngineer):
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         BackendDeveloper.create_powerful_api(self)
