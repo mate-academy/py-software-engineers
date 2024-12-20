@@ -8,7 +8,7 @@ class SoftwareEngineer:
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    def __init__(self, name: str):
+    def __init__(self, name: str) -> None:
         super().__init__(name)
         for skill in ["JavaScript", "HTML", "CSS"]:
             self.learn_skill(skill)
@@ -18,10 +18,9 @@ class FrontendDeveloper(SoftwareEngineer):
         return "<h1>Hello world</h1>"
 
 
-class BackendDeveloper(FrontendDeveloper):
+class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None :
         super().__init__(name)
-        # self.skills.clear()
         for skill in ["Python", "SQL", "Django"]:
             self.learn_skill(skill)
 
@@ -46,6 +45,3 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
         self.create_awesome_web_page()
-
-dev = FullStackDeveloper("Dima Dev")
-dev.create_web_application()
