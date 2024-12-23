@@ -2,17 +2,16 @@ from time import sleep
 
 
 class SoftwareEngineer:
-    skills = []
-    
-    def __init__(self, name: str) -> None:
+    def __init__(self, name: str, skills: list) -> None:
         self.name = name
+        self.skills = skills
     
     def learn_skill(self, skill: str) -> None:
         self.__class__.skills.append(skill)
 
 class FrontendDeveloper(SoftwareEngineer):
-    def __init__(self, name):
-        super().__init__(name)
+    def __init__(self, name, skills):
+        super().__init__(name, skills)
     
     skills = ["JavaScript", "HTML", "CSS"]
     
@@ -23,10 +22,10 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    def __init__(self, name):
-        super().__init__(name)
+    def __init__(self, name, skills):
+        super().__init__(name, skills)
     
-    skills == ["Python", "SQL", "Django",]
+    skills = ["Python", "SQL", "Django",]
     
     def create_awesome_web_page(self):
         print(f"{self.name} is creating an API...")
@@ -35,8 +34,8 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-    def __init__(self, name):
-        super().__init__(name)
+    def __init__(self, name, skills):
+        super().__init__(name, skills)
     
     skills = ["Java", "Android studio"]
     
@@ -46,11 +45,11 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 class FullstackDeveloper(SoftwareEngineer, BackendDeveloper, FrontendDeveloper):
-    def __init__(self, name):
-        super().__init__(name)
+    def __init__(self, name, skills):
+        super().__init__(name, skills)    
     
     def create_web_application(self):
         print(f"{self.name} is creating a web application...")
         sleep(2)
-        create_powerful_api()
-        create_awesome_web_page()
+        BackendDeveloper.create_powerful_api()
+        FrontendDeveloper.create_awesome_web_page()
