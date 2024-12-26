@@ -49,19 +49,3 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
         self.create_awesome_web_page()
-
-
-full_stack = FullStackDeveloper("Oleg")
-
-full_stack.create_web_application()
-# front_dev = FrontendDeveloper("Alisa")
-# print(front_dev.name)
-# print(front_dev.skills)
-# page = front_dev.create_awesome_web_page()
-# print(page)
-# engineer = SoftwareEngineer("Max")
-# print(engineer.name)
-# print(engineer.skills)
-# engineer.learn_skill('Phyton')
-# print("After add skill")
-# print(engineer.skills)
