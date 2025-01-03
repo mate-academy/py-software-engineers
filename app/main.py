@@ -42,6 +42,6 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
         super().__init__(name)
 
     def create_web_application(self) -> None:
-        print(f"{self.name} started creating a web application...")
+        print(f"{self.name} started creating a web application...") #dsg
         self.create_powerful_api()
         self.create_awesome_web_page()
