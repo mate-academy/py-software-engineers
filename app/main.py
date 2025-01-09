@@ -1,20 +1,17 @@
 class SoftwareEngineer:
-
     def __init__(self, name: str) -> None:
         self.name = name
         self.skills = []
 
     def learn_skill(self, skill: str) -> None:
-        self.skills.append(skill)
+        if skill not in self.skills:
+            self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
-
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills.append("JavaScript")
-        self.skills.append("HTML")
-        self.skills.append("CSS")
+        self.skills += ["JavaScript", "HTML", "CSS"]
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -22,12 +19,9 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills.append("Python")
-        self.skills.append("SQL")
-        self.skills.append("Django")
+        self.skills += ["Python", "SQL", "Django"]
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -35,11 +29,9 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills.append("Java")
-        self.skills.append("Android studio")
+        self.skills += ["Java", "Android studio"]
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
@@ -47,9 +39,11 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
-
     def __init__(self, name: str) -> None:
-        super().__init__(name)
+        BackendDeveloper.__init__(self, name)
+        FrontendDeveloper.__init__(self, name)
+        self.skills += ["Python", "SQL", "Django"]
+        self.skills += ["JavaScript", "HTML", "CSS"]
         self.skills = list(set(self.skills))
 
     def create_web_application(self) -> None:
