@@ -1,5 +1,5 @@
 class SoftwareEngineer:
-    def __init__(self, name, skills):
+    def __init__(self, name):
         self.name = name
         self.skills = []
 
