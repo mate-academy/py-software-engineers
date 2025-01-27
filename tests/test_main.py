@@ -11,11 +11,11 @@ from app.main import SoftwareEngineer, FrontendDeveloper, BackendDeveloper, Full
 @pytest.mark.parametrize(
     "class_,methods",
     [
-        (SoftwareEngineer, ["__init__", "learn_skill"]),
-        (FrontendDeveloper, ["__init__", "learn_skill", "create_awesome_web_page"]),
-        (BackendDeveloper, ["__init__", "learn_skill", "create_powerful_api"]),
-        (AndroidDeveloper, ["__init__", "learn_skill", "create_smooth_mobile_app"]),
-        (FullStackDeveloper, ["__init__", "learn_skill", "create_powerful_api", "create_awesome_web_page"]),
+        (SoftwareEngineer, ["__init__", "learn_skills"]),
+        (FrontendDeveloper, ["__init__", "learn_skills", "create_awesome_web_page"]),
+        (BackendDeveloper, ["__init__", "learn_skills", "create_powerful_api"]),
+        (AndroidDeveloper, ["__init__", "learn_skills", "create_smooth_mobile_app"]),
+        (FullStackDeveloper, ["__init__", "learn_skills", "create_powerful_api", "create_awesome_web_page"]),
     ],
 )
 def test_classes_should_have_corresponding_methods(class_, methods):
@@ -40,7 +40,7 @@ def test_default_skills(engineer, default_skills):
 
 
 @pytest.mark.parametrize(
-    "engineer,new_skills,final_skill_list",
+    "engineer,new_skills,final_skills_list",
     [
         (SoftwareEngineer(""), ["AWS", "Docker"], ["AWS", "Docker"]),
         (FrontendDeveloper(""), ["TypeScript", "React"], ["JavaScript", "CSS", "HTML", "TypeScript", "React"]),
@@ -50,10 +50,10 @@ def test_default_skills(engineer, default_skills):
         (AndroidDeveloper(""), ["Firebase"], ["Java", "Android studio", "Firebase"]),
     ]
 )
-def test_learn_skills_method(engineer, new_skills, final_skill_list):
-    for skill in new_skills:
-        engineer.learn_skill(skill)
-    assert sorted(engineer.skills) == sorted(final_skill_list)
+def test_learn_skills_method(engineer, new_skills, final_skills_list):
+    for skills in new_skills:
+        engineer.learn_skills(skills)
+    assert sorted(engineer.skills) == sorted(final_skills_list)
 
 
 @pytest.mark.parametrize(
@@ -131,8 +131,8 @@ def test_create_web_application_method(engineer, printed_messages):
                  "return": type(None)}
         ),
         (
-                SoftwareEngineer.learn_skill,
-                {"skill": str,
+                SoftwareEngineer.learn_skills,
+                {"skills": str,
                  "return": type(None)}
         ),
         (
