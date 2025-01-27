@@ -1,9 +1,9 @@
-import ast
-import inspect
 import io
 from contextlib import redirect_stdout
 
 import pytest
+import typing
+from typing import Callable
 
 from app.main import SoftwareEngineer, FrontendDeveloper, BackendDeveloper, FullStackDeveloper, AndroidDeveloper
 
@@ -120,3 +120,59 @@ def test_create_web_application_method(engineer, printed_messages):
     with redirect_stdout(f):
         engineer.create_web_application()
     assert f.getvalue() == printed_messages
+
+
+@pytest.mark.parametrize(
+    "function,result",
+    [
+        (
+                SoftwareEngineer.__init__,
+                {"name": str,
+                 "return": type(None)}
+        ),
+        (
+                SoftwareEngineer.learn_skill,
+                {"skill": str,
+                 "return": type(None)}
+        ),
+        (
+                FrontendDeveloper.__init__,
+                {"name": str,
+                 "return": type(None)}
+        ),
+        (
+                FrontendDeveloper.create_awesome_web_page,
+                {"return": str}
+        ),
+        (
+                BackendDeveloper.__init__,
+                {"name": str,
+                 "return": type(None)}
+        ),
+        (
+                BackendDeveloper.create_powerful_api,
+                {"return": str}
+        ),
+        (
+                AndroidDeveloper.__init__,
+                {"name": str,
+                 "return": type(None)}
+        ),
+        (
+                AndroidDeveloper.create_smooth_mobile_app,
+                {"return": str}
+        ),
+        (
+                FullStackDeveloper.__init__,
+                {"name": str,
+                 "return": type(None)}
+        ),
+        (
+                FullStackDeveloper.create_web_application,
+                {"return": type(None)}
+        )
+    ]
+)
+def test_added_type_annotation(function: Callable, result: dict) -> None:
+    hints = typing.get_type_hints(function)
+    assert dict(hints) == result, "Add or fix type annotation for methods"
