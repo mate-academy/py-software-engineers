@@ -10,13 +10,13 @@ engineer. Also, engineer should have `skills` attribute -
 a list of his/her skills, such as `"Python"` or `"JavaScript"`.
 skills should be initialized as an empty list and will be extended by the child classes.
 
-`SoftwareEngineer` class should have one method: `learn_skill` that 
-takes a `skill` of string type and should add it to the `skills` list.
+`SoftwareEngineer` class should have one method: `learn_skills` that 
+takes a `skills` of string type and should add it to the `skills` list.
 
 ```python
 engineer = SoftwareEngineer("Max")
 # engineer.skills == [] 
-engineer.learn_skill("Python")
+engineer.learn_skills("Python")
 # engineer.skills == ["Python"] 
 ```
 
