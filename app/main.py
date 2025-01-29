@@ -6,8 +6,6 @@ class SoftwareEngineer:
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
 
-    print("SoftwareEngineer init called")
-
 
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
@@ -17,7 +15,6 @@ class FrontendDeveloper(SoftwareEngineer):
             "HTML",
             "CSS"
         ])
-        print("FrontendDeveloper init called")
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -32,7 +29,6 @@ class BackendDeveloper(SoftwareEngineer):
             "SQL",
             "Django"
         ])
-        print("BackendDevelop init called")
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
