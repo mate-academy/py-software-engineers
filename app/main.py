@@ -5,7 +5,7 @@ class SoftwareEngineer:
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
-        self.skills = sorted(self.skills)
+
 
 class WebPageMixin(SoftwareEngineer):
     def create_awesome_web_page(self) -> str:
@@ -17,36 +17,36 @@ class BackendMixin(SoftwareEngineer):
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
         return "http://127.0.0.1:8000"
-    
+
 
 class FrontendDeveloper(WebPageMixin):
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["JavaScript", "HTML", "CSS"])
-        self.skills = sorted(self.skills)
+
 
 class BackendDeveloper(BackendMixin):
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["Python", "SQL", "Django"])
-        self.skills = sorted(self.skills)
+        print(f"my skils: {self.skills}")
+
 
 class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["Java", "Android studio"])
-        self.skills = sorted(self.skills)
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
         return "Ads every three swipes"
-    
 
-class FullStackDeveloper(WebPageMixin, BackendMixin):
+
+class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
 
     def create_web_application(self) -> None:
-        print(f"{self.name} is creating a web application...")
+        print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
         self.create_awesome_web_page()
