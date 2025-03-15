@@ -47,6 +47,7 @@ class AndroidDeveloper(SoftwareEngineer):
         print(f"{self.name} is creating a mobile app...")
         return "Ads every three swipes"
 
+
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
