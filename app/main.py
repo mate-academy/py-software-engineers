@@ -41,11 +41,6 @@ class AndroidDeveloper(SoftwareEngineer):
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
+        # but self is here wtf
         self.create_powerful_api()
         self.create_awesome_web_page()
-
-
-full_stack_dev = FullStackDeveloper("Tom")
-print(full_stack_dev.skills)
-
-full_stack_dev.create_web_application()
