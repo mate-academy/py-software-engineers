@@ -39,6 +39,7 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
+        # MRO handle correct order of calling __init__
         super().__init__(name)
 
     def create_web_application(self) -> None:
