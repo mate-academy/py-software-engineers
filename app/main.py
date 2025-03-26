@@ -41,8 +41,10 @@ class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
         SoftwareEngineer.__init__(self, name)
 
-        self.skills.extend(["Python", "SQL", "Django"])
-        self.skills.extend(["JavaScript", "HTML", "CSS"])
+        frontend = FrontendDeveloper(name)
+        backend = BackendDeveloper(name)
+
+        self.skills = list(set(frontend.skills + backend.skills))
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
