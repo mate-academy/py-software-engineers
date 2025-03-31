@@ -1,7 +1,7 @@
 class SoftwareEngineer:
     def __init__(self, name: str) -> None:
         self.name = name
-        self.skills = []  # Instance attribute, not class attribute
+        self.skills = []
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
@@ -39,9 +39,8 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
-        SoftwareEngineer.__init__(self, name)
-        # Add both backend and frontend skills
-        self.skills.extend(["Python", "SQL", "Django", "JavaScript", "HTML", "CSS"])
+        BackendDeveloper.__init__(self, name)
+        FrontendDeveloper.__init__(self, name)
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
