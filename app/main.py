@@ -47,5 +47,5 @@ class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()  # czesc jak mozezs zauwayzu funkcje sa
-        # porzprzedone self dlatego nie ma problemu w kodzie
+        # porzprzedone self dlatego nie ma problemu w kodzie tutaj sprwadz
         self.create_awesome_web_page()
