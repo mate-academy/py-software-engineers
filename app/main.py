@@ -3,7 +3,7 @@ class SoftwareEngineer:
         self.name = name
         self.skills = []
 
-    def learn_skill(self, skill):
+    def learn_skill(self, skill):  # ✅ método singular
         self.skills.append(skill)
 
     def code(self):
