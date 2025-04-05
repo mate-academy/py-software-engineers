@@ -3,20 +3,19 @@ class SoftwareEngineer:
         self.name = name
         self.skills = []
 
-    def code(self):
-        print(f"{self.name} is coding...")
+    def learn_skill(self, skill):
+        self.skills.append(skill)
 
-    def learn_skills(self, *skills):
-        self.skills.extend(skills)  # ✅ Uso de extend() ao invés de loop
+    def code(self):
+        return "I'm coding..."
 
 
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name):
-        super().__init__(name)  # ✅ Chamada do __init__ da superclasse
-        self.skills.extend(["JavaScript", "HTML", "CSS"])  # ✅ Skills padrão
+        super().__init__(name)
+        self.skills.extend(["JavaScript", "HTML", "CSS"])
 
-    def create_awesome_web_page(self):
-        print(f"{self.name} is creating a webpage...")
+    def create_ui(self):
         return "<h1>Hello world</h1>"
 
 
@@ -25,8 +24,7 @@ class BackendDeveloper(SoftwareEngineer):
         super().__init__(name)
         self.skills.extend(["Python", "SQL", "Django"])
 
-    def create_powerful_api(self):
-        print(f"{self.name} is creating an API...")
+    def create_api(self):
         return "http://127.0.0.1:8000"
 
 
@@ -35,22 +33,5 @@ class AndroidDeveloper(SoftwareEngineer):
         super().__init__(name)
         self.skills.extend(["Java", "Android studio"])
 
-    def create_smooth_mobile_app(self):
-        print(f"{self.name} is creating a mobile app...")
-        return "Ads every three swipes"
-
-
-class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
-    def __init__(self, name):
-        super().__init__(name)
-        # O super() acima chama FrontendDeveloper.__init__, que já adiciona os skills de Frontend.
-        # Precisamos adicionar manualmente os do Backend.
-        self.skills.extend(["Python", "SQL", "Django"])
-
-    def create_web_application(self):
-        frontend = self.create_awesome_web_page()
-        backend = self.create_powerful_api()
-        return {
-            "frontend": frontend,
-            "backend": backend,
-        }
+    def build_android_app(self):
+        return "Building .apk file..."
