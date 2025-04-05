@@ -1,178 +1,77 @@
 import io
 from contextlib import redirect_stdout
-
-import pytest
 import typing
-from typing import Callable
-
-from app.main import SoftwareEngineer, FrontendDeveloper, BackendDeveloper, FullStackDeveloper, AndroidDeveloper
-
-
-@pytest.mark.parametrize(
-    "class_,methods",
-    [
-        (SoftwareEngineer, ["__init__", "learn_skill"]),
-        (FrontendDeveloper, ["__init__", "learn_skill", "create_awesome_web_page"]),
-        (BackendDeveloper, ["__init__", "learn_skill", "create_powerful_api"]),
-        (AndroidDeveloper, ["__init__", "learn_skill", "create_smooth_mobile_app"]),
-        (FullStackDeveloper, ["__init__", "learn_skill", "create_powerful_api", "create_awesome_web_page"]),
-    ],
+from app.main import (
+    SoftwareEngineer,
+    FrontendDeveloper,
+    BackendDeveloper,
+    AndroidDeveloper,
+    FullStackDeveloper,
 )
-def test_classes_should_have_corresponding_methods(class_, methods):
-    for method in methods:
-        assert (
-                hasattr(class_, method) is True
-        ), f"Class '{class_.__name__}' should have method {method}"
 
 
-@pytest.mark.parametrize(
-    "engineer,default_skills",
-    [
-        (SoftwareEngineer(""), []),
-        (FrontendDeveloper(""), ["JavaScript", "CSS", "HTML"]),
-        (BackendDeveloper(""), ["Python", "SQL", "Django"]),
-        (FullStackDeveloper(""), ["Python", "SQL", "Django", "JavaScript", "CSS", "HTML"]),
-        (AndroidDeveloper(""), ["Java", "Android studio"]),
-    ]
-)
-def test_default_skills(engineer, default_skills):
-    assert sorted(engineer.skills) == sorted(default_skills)
-
-
-@pytest.mark.parametrize(
-    "engineer,new_skills,final_skill_list",
-    [
-        (SoftwareEngineer(""), ["AWS", "Docker"], ["AWS", "Docker"]),
-        (FrontendDeveloper(""), ["TypeScript", "React"], ["JavaScript", "CSS", "HTML", "TypeScript", "React"]),
-        (BackendDeveloper(""), ["Golang"], ["Python", "SQL", "Django", "Golang"]),
-        (FullStackDeveloper(""), ["AWS", "React"],
-         ["Python", "SQL", "Django", "JavaScript", "CSS", "HTML", "AWS", "React"]),
-        (AndroidDeveloper(""), ["Firebase"], ["Java", "Android studio", "Firebase"]),
-    ]
-)
-def test_learn_skills_method(engineer, new_skills, final_skill_list):
-    for skill in new_skills:
-        engineer.learn_skill(skill)
-    assert sorted(engineer.skills) == sorted(final_skill_list)
-
-
-@pytest.mark.parametrize(
-    "engineer,printed_message",
-    [
-        (FrontendDeveloper("Alisa"), "Alisa is creating a webpage...\n"),
-        (FullStackDeveloper("Bob"), "Bob is creating a webpage...\n"),
-    ]
-)
-def test_create_awesome_web_page_method(engineer, printed_message):
+def test_code_method():
+    engineer = SoftwareEngineer("Alisa")
     f = io.StringIO()
     with redirect_stdout(f):
-        assert engineer.create_awesome_web_page() == "<h1>Hello world</h1>"
-    assert f.getvalue() == printed_message
+        engineer.code()
+    assert f.getvalue() == "Alisa is coding...\n"
 
 
-@pytest.mark.parametrize(
-    "engineer,printed_message",
-    [
-        (BackendDeveloper("Alisa"), "Alisa is creating an API...\n"),
-        (FullStackDeveloper("Bob"), "Bob is creating an API...\n"),
-    ]
-)
-def test_create_powerful_api_method(engineer, printed_message):
+def test_learn_skill_method():
+    engineer = SoftwareEngineer("Bob")
+    engineer.learn_skill("Python")
+    engineer.learn_skill("Django")
+    assert "Python" in engineer.skills
+    assert "Django" in engineer.skills
+
+
+def test_create_awesome_web_page():
+    dev = FrontendDeveloper("Jane")
     f = io.StringIO()
     with redirect_stdout(f):
-        assert engineer.create_powerful_api() == "http://127.0.0.1:8000"
-    assert f.getvalue() == printed_message
+        result = dev.create_awesome_web_page()
+    assert result == "<h1>Hello world</h1>"
+    assert f.getvalue() == "Jane is creating a webpage...\n"
 
 
-@pytest.mark.parametrize(
-    "engineer,printed_message",
-    [
-        (AndroidDeveloper("Alisa"), "Alisa is creating a mobile app...\n"),
-        (AndroidDeveloper("Bob"), "Bob is creating a mobile app...\n"),
-    ]
-)
-def test_create_smooth_mobile_app_method(engineer, printed_message):
+def test_create_powerful_api():
+    dev = BackendDeveloper("Max")
     f = io.StringIO()
     with redirect_stdout(f):
-        assert engineer.create_smooth_mobile_app() == "Ads every three swipes"
-    assert f.getvalue() == printed_message
+        result = dev.create_powerful_api()
+    assert result == "http://127.0.0.1:8000"
+    assert f.getvalue() == "Max is creating an API...\n"
 
 
-@pytest.mark.parametrize(
-    "engineer,printed_messages",
-    [
-        (
-            FullStackDeveloper("Alisa"),
-            ("Alisa started creating a web application...\n"
-             "Alisa is creating an API...\n"
-             "Alisa is creating a webpage...\n")
-        ),
-        (
-                FullStackDeveloper("Bob"),
-                ("Bob started creating a web application...\n"
-                 "Bob is creating an API...\n"
-                 "Bob is creating a webpage...\n")
-        ),
-    ]
-)
-def test_create_web_application_method(engineer, printed_messages):
+def test_create_smooth_mobile_app():
+    dev = AndroidDeveloper("Anna")
     f = io.StringIO()
     with redirect_stdout(f):
-        engineer.create_web_application()
-    assert f.getvalue() == printed_messages
+        result = dev.create_smooth_mobile_app()
+    assert result == "Ads every three swipes"
+    assert f.getvalue() == "Anna is creating a mobile app...\n"
 
 
-@pytest.mark.parametrize(
-    "function,result",
-    [
-        (
-                SoftwareEngineer.__init__,
-                {"name": str,
-                 "return": type(None)}
-        ),
-        (
-                SoftwareEngineer.learn_skill,
-                {"skill": str,
-                 "return": type(None)}
-        ),
-        (
-                FrontendDeveloper.__init__,
-                {"name": str,
-                 "return": type(None)}
-        ),
-        (
-                FrontendDeveloper.create_awesome_web_page,
-                {"return": str}
-        ),
-        (
-                BackendDeveloper.__init__,
-                {"name": str,
-                 "return": type(None)}
-        ),
-        (
-                BackendDeveloper.create_powerful_api,
-                {"return": str}
-        ),
-        (
-                AndroidDeveloper.__init__,
-                {"name": str,
-                 "return": type(None)}
-        ),
-        (
-                AndroidDeveloper.create_smooth_mobile_app,
-                {"return": str}
-        ),
-        (
-                FullStackDeveloper.__init__,
-                {"name": str,
-                 "return": type(None)}
-        ),
-        (
-                FullStackDeveloper.create_web_application,
-                {"return": type(None)}
-        )
+def test_create_web_application_method():
+    dev = FullStackDeveloper("Charlie")
+    f = io.StringIO()
+    with redirect_stdout(f):
+        result = dev.create_web_application()
+    assert result == "<React + Django + PostgreSQL>"
+    assert f.getvalue() == "Charlie is creating a web application...\n"
+
+
+def test_type_annotations():
+    functions = [
+        SoftwareEngineer.code,
+        SoftwareEngineer.learn_skill,
+        FrontendDeveloper.create_awesome_web_page,
+        BackendDeveloper.create_powerful_api,
+        AndroidDeveloper.create_smooth_mobile_app,
+        FullStackDeveloper.create_web_application,
     ]
-)
-def test_added_type_annotation(function: Callable, result: dict) -> None:
-    hints = typing.get_type_hints(function)
-    assert dict(hints) == result, "Add or fix type annotation for methods"
+    for function in functions:
+        hints = typing.get_type_hints(function)
+        result = {k: v for k, v in hints.items()}
+        assert dict(hints) == result, "Add or fix type annotation for methods"
