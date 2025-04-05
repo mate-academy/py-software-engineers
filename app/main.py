@@ -3,11 +3,11 @@ class SoftwareEngineer:
         self.name = name
         self.skills = []
 
-    def learn_skill(self, skill):  # ✅ método singular
-        self.skills.append(skill)
-
     def code(self):
-        return "I'm coding..."
+        print(f"{self.name} is coding...")
+
+    def learn_skill(self, skill):
+        self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
@@ -15,7 +15,8 @@ class FrontendDeveloper(SoftwareEngineer):
         super().__init__(name)
         self.skills.extend(["JavaScript", "HTML", "CSS"])
 
-    def create_ui(self):
+    def create_awesome_web_page(self):
+        print(f"{self.name} is creating a webpage...")
         return "<h1>Hello world</h1>"
 
 
@@ -24,7 +25,8 @@ class BackendDeveloper(SoftwareEngineer):
         super().__init__(name)
         self.skills.extend(["Python", "SQL", "Django"])
 
-    def create_api(self):
+    def create_powerful_api(self):
+        print(f"{self.name} is creating an API...")
         return "http://127.0.0.1:8000"
 
 
@@ -33,5 +35,16 @@ class AndroidDeveloper(SoftwareEngineer):
         super().__init__(name)
         self.skills.extend(["Java", "Android studio"])
 
-    def build_android_app(self):
-        return "Building .apk file..."
+    def create_smooth_mobile_app(self):
+        print(f"{self.name} is creating a mobile app...")
+        return "Ads every three swipes"
+
+
+class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
+    def __init__(self, name):
+        super().__init__(name)
+        self.skills.extend(["Git", "Docker"])
+
+    def create_web_application(self):
+        print(f"{self.name} is creating a web application...")
+        return "<React + Django + PostgreSQL>"
