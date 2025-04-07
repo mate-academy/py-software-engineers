@@ -44,7 +44,20 @@ class AndroidDeveloper(SoftwareEngineer):
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
+        # Add frontend skills manually, but avoid duplicates
+        frontend_skills = ["JavaScript", "CSS", "HTML"]
+        for skill in frontend_skills:
+            if skill not in self.skills:
+                self.skills.append(skill)
 
+    def create_web_application(self) -> None:
+        print(f"{self.name} started creating a web application...")
+        self.create_powerful_api()
+        self.create_awesome_web_page()
+    def create_web_application(self) -> None:
+        print(f"{self.name} started creating a web application...")
+        self.create_powerful_api()
+        self.create_awesome_web_page()
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
