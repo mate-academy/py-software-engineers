@@ -1,5 +1,5 @@
 class SoftwareEngineer:
-    def __init__(self, name: str) -> None:
+    def __init__(self, name: str, **kwargs) -> None:
         self.name = name
         self.skills = []
 
@@ -20,8 +20,8 @@ class BackendSkillsMixin:
 
 
 class FrontendDeveloper(SoftwareEngineer, FrontendSkillsMixin):
-    def __init__(self, name: str) -> None:
-        super().__init__(name=name)
+    def __init__(self, name: str, **kwargs) -> None:
+        super().__init__(name=name, **kwargs)
         self.f_skills_extend(self.skills)
 
     def create_awesome_web_page(self) -> str:
@@ -30,8 +30,8 @@ class FrontendDeveloper(SoftwareEngineer, FrontendSkillsMixin):
 
 
 class BackendDeveloper(SoftwareEngineer, BackendSkillsMixin):
-    def __init__(self, name: str) -> None:
-        super().__init__(name=name)
+    def __init__(self, name: str, **kwargs) -> None:
+        super().__init__(name=name, **kwargs)
         self.b_skills_extend(self.skills)
 
     def create_powerful_api(self) -> str:
@@ -40,8 +40,8 @@ class BackendDeveloper(SoftwareEngineer, BackendSkillsMixin):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-    def __init__(self, name: str) -> None:
-        super().__init__(name=name)
+    def __init__(self, name: str, **kwargs) -> None:
+        super().__init__(name=name, **kwargs)
         self.skills.extend(["Java", "Android studio"])
 
     def create_smooth_mobile_app(self) -> str:
@@ -51,10 +51,8 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(FrontendDeveloper,
                          BackendDeveloper):
-    def __init__(self, name: str) -> None:
-        SoftwareEngineer.__init__(self, name=name)
-        self.f_skills_extend(self.skills)
-        self.b_skills_extend(self.skills)
+    def __init__(self, name: str, **kwargs) -> None:
+        super().__init__(name=name, **kwargs)
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
