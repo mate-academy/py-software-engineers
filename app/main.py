@@ -3,9 +3,8 @@ class SoftwareEngineer:
         self.name = name
         self.skills = []
 
-    def learn_skill(self, skill: str) -> list:
+    def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
-        return self.skills
 
 
 class FrontendDeveloper(SoftwareEngineer):
@@ -21,6 +20,7 @@ class FrontendDeveloper(SoftwareEngineer):
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
+        # Extend the skills for BackendDeveloper
         self.skills.extend(["Python", "SQL", "Django"])
 
     def create_powerful_api(self) -> str:
@@ -40,10 +40,9 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
-        # Initialize both parent classes (Frontend and Backend)
-        SoftwareEngineer.__init__(self, name)
         FrontendDeveloper.__init__(self, name)
         BackendDeveloper.__init__(self, name)
+        self.skills = list(dict.fromkeys(self.skills))
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
