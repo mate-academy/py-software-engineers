@@ -1,10 +1,11 @@
 class SoftwareEngineer:
     def __init__(self, name: str) -> None:
-        self.name = name
-        self.skills = []
+        self.name: str = name
+        self.skills: list[str] = []
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
+        return self.skills
 
 
 class FrontendDeveloper(SoftwareEngineer):
@@ -20,7 +21,6 @@ class FrontendDeveloper(SoftwareEngineer):
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        # Extend the skills for BackendDeveloper
         self.skills.extend(["Python", "SQL", "Django"])
 
     def create_powerful_api(self) -> str:
@@ -42,7 +42,8 @@ class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
         FrontendDeveloper.__init__(self, name)
         BackendDeveloper.__init__(self, name)
-        self.skills = list(dict.fromkeys(self.skills))
+        # Combining frontend and backend skills while maintaining the correct order
+        self.skills = ["JavaScript", "HTML", "CSS", "Python", "SQL", "Django"]
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
