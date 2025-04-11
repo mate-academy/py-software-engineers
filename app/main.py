@@ -44,17 +44,7 @@ class AndroidDeveloper(SoftwareEngineer):
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        # Garante todas as habilidades mesmo se alguma foi sobrescrita
-        required_skills = [
-            "Python",
-            "SQL",
-            "Django",
-            "JavaScript",
-            "HTML",
-            "CSS"
-        ]
-        for skill in required_skills:
-            self.learn_skill(skill)
+        self.skills = list(dict.fromkeys(self.skills))
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
