@@ -40,10 +40,8 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
-        FrontendDeveloper.__init__(self, name)
-        BackendDeveloper.__init__(self, name)
-        # Combining frontend and backend skills while maintaining the correct order
-        self.skills = ["JavaScript", "HTML", "CSS", "Python", "SQL", "Django"]
+        super().__init__(name)
+
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
