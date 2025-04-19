@@ -41,7 +41,7 @@ class AndroidDeveloper(SoftwareEngineer):
         super().__init__(name)
         self.skills.extend([
             "Java",
-            "Android studio",
+            "Android studio"
         ])
 
     def create_smooth_mobile_app(self) -> str:
