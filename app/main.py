@@ -1,4 +1,5 @@
-from typing import List, Callable, Optional
+from typing import List
+
 
 class SoftwareEngineer:
     def __init__(self, name: str) -> None:
