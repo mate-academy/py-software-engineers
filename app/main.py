@@ -47,7 +47,8 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
         BackendDeveloper.__init__(self, name)
         FrontendDeveloper.__init__(self, name)
         # Ensure skills from both parent classes are added
-        self.skills = list(set(BackendDeveloper(name).skills + FrontendDeveloper(name).skills))
+        self.skills = list(set(BackendDeveloper(name).skills +
+                                    FrontendDeveloper(name).skills))
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
