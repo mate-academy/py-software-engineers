@@ -44,11 +44,8 @@ class AndroidDeveloper(SoftwareEngineer):
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
         SoftwareEngineer.__init__(self, name)
-        BackendDeveloper.__init__(self, name)
-        FrontendDeveloper.__init__(self, name)
-        # Ensure skills from both parent classes are added
-        self.skills = list(set(BackendDeveloper(name).skills +
-                                    FrontendDeveloper(name).skills))
+        # Get skills from both parent classes and combine them into a set to remove duplicates
+        self.skills = list(set(BackendDeveloper(name).skills + FrontendDeveloper(name).skills))
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
