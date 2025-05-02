@@ -47,6 +47,6 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
         super().__init__(name)
         self.skills = list(set(self.skills))
 
-    def create_web_application(self) -> str:
+    def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         return (self.create_powerful_api(), self.create_awesome_web_page())
