@@ -1,5 +1,5 @@
 class SoftwareEngineer:
-    
+
     def __init__(self, name: str) -> None:
         self.name = name
         self.skills = []
@@ -15,7 +15,7 @@ class FrontendDeveloper(SoftwareEngineer):
         self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_awesome_web_page(self) -> str:
-        print (f"{self.name} is creating a webpage...")
+        print(f"{self.name} is creating a webpage...")
         return "<h1>Hello world</h1>"
 
 
@@ -26,7 +26,7 @@ class BackendDeveloper(SoftwareEngineer):
         self.skills.extend(["Python", "SQL", "Django"])
 
     def create_powerful_api(self) -> str:
-        print (f"{self.name} is creating an API...")
+        print(f"{self.name} is creating an API...")
         return "http://127.0.0.1:8000"
 
 
@@ -37,7 +37,7 @@ class AndroidDeveloper(SoftwareEngineer):
         self.skills.extend(["Java", "Android studio"])
 
     def create_smooth_mobile_app(self) -> str:
-        print (f"{self.name} is creating a mobile app...")
+        print(f"{self.name} is creating a mobile app...")
         return "Ads every three swipes"
 
 
@@ -48,6 +48,6 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
         self.skills = list(set(self.skills))
 
     def create_web_application(self) -> str:
-        print (f"{self.name} started creating a web application...")
+        print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
         self.create_awesome_web_page()
