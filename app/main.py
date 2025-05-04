@@ -35,9 +35,10 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name):
-        super().__init__(name)
-        # Asegurarse de que las habilidades estén en el orden correcto
-        self.skills = list(dict.fromkeys(self.skills))
+    BackendDeveloper.__init__(self, name)
+    FrontendDeveloper.__init__(self, name)
+    self.skills = list(dict.fromkeys(self.skills))
+
 
     def create_web_application(self):
         print(f"{self.name} started creating a web application...")
