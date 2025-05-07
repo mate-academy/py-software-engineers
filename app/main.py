@@ -40,7 +40,7 @@ class AndroidDeveloper(SoftwareEngineer):
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
-        return 'Ads every three swipes'
+        return "Ads every three swipes"
 
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
