@@ -43,11 +43,11 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
-
     def __init__(self, name: str) -> None:
-        SoftwareEngineer.__init__(self, name)
-        self.skills.extend(["Python", "SQL", "Django"])
-        self.skills.extend(["JavaScript", "HTML", "CSS"])
+        super().__init__(name)
+        backend_skills = self.skills.copy()
+        FrontendDeveloper.__init__(self, name)
+        self.skills.extend([skill for skill in backend_skills if skill not in self.skills])
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
