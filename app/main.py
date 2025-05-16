@@ -50,6 +50,8 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
             if skill not in unique_skills:
                 unique_skills.append(skill)
 
+        self.skills = unique_skills
+
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
