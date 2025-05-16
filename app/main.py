@@ -5,10 +5,10 @@ class SoftwareEngineer:
         self.skills = []
 
     def learn_skill(self, skill: str) -> None:
-        if isinstance(skill, str):
-            self.skills.append(skill)
-        elif isinstance(skill, list):
+        if isinstance(skill, list):
             self.skills.extend(skill)
+        elif isinstance(skill, str):
+            self.skills.append(skill)
         else:
             raise TypeError(f"Expected "
                             f"list[str] or str, "
