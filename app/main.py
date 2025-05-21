@@ -10,11 +10,12 @@ class SoftwareEngineer:
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    def __init__(self, name: str, skills: list = None):
+    def __init__(self, name: str, skills: list):
         super().__init__(name, skills)
-        self.skills = skills
         if skills is None:
             self.skills = ["JavaScript", "HTML", "CSS"]
+        else:
+            self.skills = skills
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -23,11 +24,12 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    def __init__(self, name: str, skills: list = None):
+    def __init__(self, name: str, skills: list):
         super().__init__(name, skills)
-        self.skills = skills
         if skills is None:
             self.skills = ["Python", "SQL", "Django"]
+        else:
+            self.skills = skills
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -36,11 +38,12 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-    def __init__(self, name: str, skills: list = None):
+    def __init__(self, name: str, skills: list):
         super().__init__(name, skills)
-        self.skills = skills
         if skills is None:
             self.skills = ["Java", "Android studio"]
+        else:
+            self.skills = skills
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
@@ -49,12 +52,13 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(BackendDeveloper, AndroidDeveloper):
-    def __init__(self, name: str, skills: list = None):
+    def __init__(self, name: str, skills: list):
         super().__init__(name, skills)
-        self.skills = skills
         if skills is None:
             self.skills = ["Python", "SQL", "Django",
                            "JavaScript", "HTML", "CSS"]
+        else:
+            self.skills = skills
 
     def create_web_application(self):
         print(f"{self.name} started creating a web application...")
