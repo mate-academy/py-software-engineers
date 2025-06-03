@@ -11,7 +11,7 @@ class SoftwareEngineer:
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        [self.skills.append(skill) for skill in [
+        [self.learn_skill(skill) for skill in [
             "JavaScript",
             "HTML",
             "CSS"
@@ -25,7 +25,7 @@ class FrontendDeveloper(SoftwareEngineer):
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        [self.skills.append(skill) for skill in [
+        [self.learn_skill(skill) for skill in [
             "Python",
             "SQL",
             "Django"
@@ -39,7 +39,7 @@ class BackendDeveloper(SoftwareEngineer):
 class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        [self.skills.append(skill) for skill in [
+        [self.learn_skill(skill) for skill in [
             "Java",
             "Android studio"
         ]]
@@ -50,8 +50,8 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(
-    FrontendDeveloper,
-    BackendDeveloper
+    BackendDeveloper,
+    FrontendDeveloper
 ):
 
     def __init__(self, name: str) -> None:
