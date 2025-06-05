@@ -44,13 +44,16 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
-        super().__init__(name)
+        self.name = name
+        self.skills = []
+        self.learn_skill("Python")
+        self.learn_skill("SQL")
+        self.learn_skill("Django")
+        self.learn_skill("JavaScript")
+        self.learn_skill("HTML")
+        self.learn_skill("CSS")
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
         self.create_awesome_web_page()
-
-
-full = FullStackDeveloper("Sasha")
-print(full.skills)
