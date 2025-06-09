@@ -42,10 +42,10 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
-        # Explicitly initialize both parent classes
-        SoftwareEngineer.__init__(self, name)  # Initialize base class first
-        FrontendDeveloper.__init__(self, name)  # Then frontend skills
-        BackendDeveloper.__init__(self, name)   # Then backend skills
+        SoftwareEngineer.__init__(self, name)
+        frontend_skills = ["JavaScript", "HTML", "CSS"]
+        backend_skills = ["Python", "SQL", "Django"]
+        self.skills.extend(frontend_skills + backend_skills)
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
