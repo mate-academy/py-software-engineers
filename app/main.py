@@ -33,11 +33,22 @@ class AndroidDeveloper(SoftwareEngineer):
         print(f"{self.name} is creating a mobile app...")
         return "Ads every three swipes"
 
-class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
+class FullStackDeveloper(SoftwareEngineer):
     def __init__(self, name: str):
         super().__init__(name)
+        self.skills.extend(["Python", "SQL", "Django"])  # backend
+        self.skills.extend(["JavaScript", "HTML", "CSS"])  # frontend
 
     def create_web_application(self):
         print(f"{self.name} started creating a web application...")
-        self.create_powerful_api()
-        self.create_awesome_web_page()
+        print(self.create_powerful_api())
+        print(self.create_awesome_web_page())
+
+    def create_powerful_api(self):
+        print(f"{self.name} is creating an API...")
+        return "http://127.0.0.1:8000"
+
+    def create_awesome_web_page(self):
+        print(f"{self.name} is creating a webpage...")
+        return "<h1>Hello world</h1>"
+
