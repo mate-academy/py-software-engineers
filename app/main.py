@@ -1,7 +1,9 @@
+from typing import List
+
 class SoftwareEngineer:
     def __init__(self, name: str) -> None:
-        self.name = name
-        self.skills = []
+        self.name: str = name
+        self.skills: List[str] = []
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
@@ -10,7 +12,7 @@ class SoftwareEngineer:
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills.extend(["JavaScript", "HTML", "CSS"])
+        self.skills += ["JavaScript", "HTML", "CSS"]
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -20,7 +22,7 @@ class FrontendDeveloper(SoftwareEngineer):
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills.extend(["Python", "SQL", "Django"])
+        self.skills += ["Python", "SQL", "Django"]
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -30,7 +32,7 @@ class BackendDeveloper(SoftwareEngineer):
 class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills.extend(["Java", "Android studio"])
+        self.skills += ["Java", "Android studio"]
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
@@ -39,13 +41,9 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
-        # Inicjalizacja bazy i dodanie frontend i backend skills
-        SoftwareEngineer.__init__(self, name)
-        self.skills.extend(["JavaScript", "HTML", "CSS"])
-        self.skills.extend(["Python", "SQL", "Django"])
+        super().__init__(name)  # MRO: FrontendDeveloper -> BackendDeveloper -> SoftwareEngineer
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
-        # Wywołujemy metody, które same już drukują swoje komunikaty
         self.create_powerful_api()
         self.create_awesome_web_page()
