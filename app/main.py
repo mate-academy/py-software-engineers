@@ -51,3 +51,4 @@ class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
         self.create_powerful_api()
         self.create_awesome_web_page()
 
+
