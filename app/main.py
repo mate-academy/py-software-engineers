@@ -1,5 +1,6 @@
 from typing import List
 
+
 class SoftwareEngineer:
     def __init__(self, name: str) -> None:
         self.name: str = name
