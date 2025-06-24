@@ -1,6 +1,5 @@
 from typing import List
 
-
 class SoftwareEngineer:
     def __init__(self, name: str) -> None:
         self.name: str = name
@@ -46,8 +45,7 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
-        SoftwareEngineer.__init__(self, name)
-        BackendDeveloper.__init__(self, name)
+        super().__init__(name)
         for skill in ["JavaScript", "HTML", "CSS"]:
             self.learn_skill(skill)
 
