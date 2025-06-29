@@ -1,7 +1,7 @@
 class SoftwareEngineer:
     def __init__(self, name: str) -> None:
         self.name = name
-        self.skills = []
+        self.skills: list[str] = []
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
@@ -42,7 +42,3 @@ class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
         self.create_awesome_web_page()
-
-
-full_stack_dev = FullStackDeveloper("Tom")
-print(full_stack_dev.skills)
