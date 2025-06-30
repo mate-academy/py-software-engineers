@@ -15,7 +15,6 @@ class SoftwareEngineer:
 
 
 class FrontendDeveloper(SoftwareEngineer):
-
     def __init__(
             self,
             name: str
