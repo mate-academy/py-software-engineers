@@ -10,7 +10,7 @@ class SoftwareEngineer:
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         self.name = name
-        if not hasattr(self, 'skills'):
+        if not hasattr(self, "skills"):
             self.skills = []
         self.skills.extend(["JavaScript", "HTML", "CSS"])
 
