@@ -1,25 +1,14 @@
 class SoftwareEngineer:
-
-    def __init__(
-            self,
-            name: str
-    ) -> None:
+    def __init__(self, name: str) -> None:
         self.name = name
         self.skills = []
 
-    def learn_skill(
-            self,
-            skill: str
-    ) -> None:
-        self.skills.extend([skill])
+    def learn_skill(self, skill: str) -> None:
+        self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
-
-    def __init__(
-            self,
-            name: str
-    ) -> None:
+    def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["JavaScript", "HTML", "CSS"])
 
@@ -29,11 +18,7 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-
-    def __init__(
-            self,
-            name: str
-    ) -> None:
+    def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["Python", "SQL", "Django"])
 
@@ -43,11 +28,7 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-
-    def __init__(
-            self,
-            name: str
-    ) -> None:
+    def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["Java", "Android studio"])
 
@@ -56,9 +37,21 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
+class FullStackDeveloper(SoftwareEngineer):
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        self.skills.extend(["JavaScript", "HTML", "CSS"])
+        self.skills.extend(["Python", "SQL", "Django"])
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
-        self.create_powerful_api()
-        self.create_awesome_web_page()
+        print(self.create_powerful_api())
+        print(self.create_awesome_web_page())
+
+    def create_powerful_api(self) -> str:
+        print(f"{self.name} is creating an API...")
+        return "http://127.0.0.1:8000"
+
+    def create_awesome_web_page(self) -> str:
+        print(f"{self.name} is creating a webpage...")
+        return "<h1>Hello world</h1>"
