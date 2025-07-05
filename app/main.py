@@ -37,10 +37,16 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
-    def __init__(self, name:str) -> None:
-        super().__init__(name)
+    def __init__(self, name: str) -> None:
+        # 1) Ініціалізуємо себе як SoftwareEngineer — тільки тут створюємо порожній список skills
+        SoftwareEngineer.__init__(self, name)
+        # 2) Ручками додаємо спочатку бекенд-скіли у правильному порядку:
+        self.skills.extend(["Python", "SQL", "Django"])
+        # 3) Потім фротенд-скіли:
+        self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
+        # методи успадковані від батьків, вони з’являться автоматично
         self.create_powerful_api()
         self.create_awesome_web_page()
