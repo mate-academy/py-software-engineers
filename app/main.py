@@ -37,14 +37,9 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
+class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
-        # initialize skills list once
-        SoftwareEngineer.__init__(self, name)
-        # add backend skills
-        self.skills.extend(["Python", "SQL", "Django"])
-        # add frontend skills
-        self.skills.extend(["JavaScript", "HTML", "CSS"])
+        super().__init__(name)
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
