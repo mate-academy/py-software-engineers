@@ -60,7 +60,10 @@ class AndroidDeveloper(SoftwareEngineer, AndroidDeveloperMixin):
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
-        super().__init__(name)
+        SoftwareEngineer.__init__(self, name)
+        self.add_backend()
+        self.add_frontend()
+
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
