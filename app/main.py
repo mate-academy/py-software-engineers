@@ -1,13 +1,13 @@
-from typing import List
-
-
 class SoftwareEngineer:
     def __init__(self, name: str) -> None:
-        self.name: str = name
-        self.skills: List[str] = []
+        self.name = name
+        self.skills = []
 
     def learn_skill(self, skill: str) -> None:
-        self.skills.append(skill)
+        if isinstance(skill, str):
+            self.skills.append(skill)
+        else:
+            raise ValueError("Skill must be a string.")
 
 
 class FrontendDeveloper(SoftwareEngineer):
@@ -43,7 +43,11 @@ class AndroidDeveloper(SoftwareEngineer):
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        for skill in ["JavaScript", "HTML", "CSS"]:
+        required_skills = [
+            "Python", "SQL", "Django",
+            "JavaScript", "HTML", "CSS"
+        ]
+        for skill in required_skills:
             if skill not in self.skills:
                 self.skills.append(skill)
 
