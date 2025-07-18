@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import io
 from contextlib import redirect_stdout
 
@@ -5,7 +9,7 @@ import pytest
 import typing
 from typing import Callable
 
-from app.main import SoftwareEngineer, FrontendDeveloper, BackendDeveloper, FullStackDeveloper, AndroidDeveloper
+from tests import SoftwareEngineer, FrontendDeveloper, BackendDeveloper, FullStackDeveloper, AndroidDeveloper
 
 
 @pytest.mark.parametrize(
