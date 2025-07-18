@@ -41,7 +41,11 @@ class AndroidDeveloper(SoftwareEngineer):
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = list(dict.fromkeys(self.skills))
+        combined_skills = []
+        for skill in self.skills:
+            if skill not in combined_skills:
+                combined_skills.append(skill)
+        self.skills = combined_skills
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
