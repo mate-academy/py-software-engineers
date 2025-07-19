@@ -9,7 +9,7 @@ import pytest
 import typing
 from typing import Callable
 
-from tests import SoftwareEngineer, FrontendDeveloper, BackendDeveloper, FullStackDeveloper, AndroidDeveloper
+from app.main import SoftwareEngineer, FrontendDeveloper, BackendDeveloper, FullStackDeveloper, AndroidDeveloper
 
 
 @pytest.mark.parametrize(
