@@ -8,7 +8,8 @@ class SoftwareEngineer:
             self.skills.append(skill)
         elif isinstance(skill, list):
             self.skills.extend(skill)
-
+        else:
+            raise TypeError(f"Type {type(skill)} is not supported")
 
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
