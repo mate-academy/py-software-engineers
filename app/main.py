@@ -42,7 +42,8 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
-        super().__init__(name)  # Викликає FrontendDeveloper.__init__, який викликає SoftwareEngineer.__init__
+        # Викликає __init__ FrontendDeveloper → SoftwareEngineer
+        super().__init__(name)
 
         # Додаємо backend-навички, яких ще немає
         backend_skills = ["Python", "SQL", "Django"]
