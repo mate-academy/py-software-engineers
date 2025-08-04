@@ -44,13 +44,7 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
-        SoftwareEngineer.__init__(self, name)
-        self.learn_skill("Python")
-        self.learn_skill("SQL")
-        self.learn_skill("Django")
-        self.learn_skill("JavaScript")
-        self.learn_skill("HTML")
-        self.learn_skill("CSS")
+        super().__init__(name)
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
