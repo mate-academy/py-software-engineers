@@ -3,6 +3,32 @@
 **Please note:** read [the guideline](https://github.com/mate-academy/py-task-guideline/blob/main/README.md)
 before starting.
 
+## Task
+
+Create a `SoftwareEngineer` class, which will be a parent for all other classes. Its `__init__` method should take one parameter: `name` of the engineer. Also, the engineer should have a `skills` attribute - a list of his/her skills, such as `"Python"` or `"JavaScript"`. Skills should be initialized as an empty list and will be extended by the child classes.
+
+`SoftwareEngineer` class should have one method: `learn_skill` that takes a `skill` of string type and should add it to the `skills` list.
+
+```python
+engineer = SoftwareEngineer("Max")
+# engineer.skills == [] 
+engineer.learn_skill("Python")
+# engineer.skills == ["Python"] 
+```
+
+## Task
+
+Create a `SoftwareEngineer` class, which will be a parent for all other classes. Its `__init__` method should take one parameter: `name` of the engineer. Also, the engineer should have a `skills` attribute - a list of his/her skills, such as `"Python"` or `"JavaScript"`. Skills should be initialized as an empty list and will be extended by the child classes.
+
+`SoftwareEngineer` class should have one method: `learn_skill` that takes a `skill` of string type and should add it to the `skills` list.
+
+```python
+engineer = SoftwareEngineer("Max")
+# engineer.skills == [] 
+engineer.learn_skill("Python")
+# engineer.skills == ["Python"] 
+```
+
 Firstly, you should create `SoftwareEngineer` class, 
 which will be a parent for all other classes. 
 Its `__init__` method should take one parameter: `name` of the 
