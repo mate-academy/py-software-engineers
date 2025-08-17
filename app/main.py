@@ -4,7 +4,7 @@ class SoftwareEngineer:
     def __init__(self, name: str) -> None:
         self.name = name
 
-    def learn_skills(self, skill: str) -> None:
+    def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
 
 
@@ -25,7 +25,7 @@ class BackendDeveloper(SoftwareEngineer):
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
-        return "https//127.0.0.1:8000"
+        return "http://127.0.0.1:8000"
 
 
 class AndroidDeveloper(SoftwareEngineer):
@@ -38,9 +38,7 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(SoftwareEngineer,
-                         BackendDeveloper,
-                         FrontendDeveloper):
+class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
 
