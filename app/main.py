@@ -40,7 +40,7 @@ class AndroidDeveloper(SoftwareEngineer):
         return app
 
 
-class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
+class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
 
