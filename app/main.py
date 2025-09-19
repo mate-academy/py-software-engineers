@@ -20,7 +20,8 @@ class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         """Inicializa o dev de frontend e adiciona habilidades padrão."""
         super().__init__(name)
-        self.skills.extend(["HTML", "CSS", "JavaScript"])
+        # AJUSTE: A ordem das habilidades foi corrigida p corresponder tarefa.
+        self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_awesome_web_page(self) -> str:
         """Cria uma página da web e imprime uma mensagem de status."""
@@ -34,7 +35,8 @@ class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         """Inicializa o dev de backend e adiciona habilidades padrão."""
         super().__init__(name)
-        self.skills.extend(["Python", "Django", "SQL"])
+        # AJUSTE: A ordem das habilidades foi corrigida p corresponder tarefa.
+        self.skills.extend(["Python", "SQL", "Django"])
 
     def create_powerful_api(self) -> str:
         """Cria uma API e imprime uma mensagem de status."""
