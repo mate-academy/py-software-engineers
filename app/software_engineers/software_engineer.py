@@ -3,5 +3,5 @@ class SoftwareEngineer:
         self.name = name
         self.skills = []
 
-    def learn_skill(self, skill_name: str) -> None:
-        self.skills.append(skill_name)
+    def learn_skill(self, skill: str) -> None:
+        self.skills.append(skill)

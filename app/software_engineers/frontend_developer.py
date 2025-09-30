@@ -8,4 +8,4 @@ class FrontendDeveloper(SoftwareEngineer):
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
-        return "<h1>Hello World!</h1>"
+        return "<h1>Hello world</h1>"
