@@ -38,9 +38,8 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(BackendDeveloper,
-                         FrontendDeveloper,
-                         SoftwareEngineer):
+class FullStackDeveloper(FrontendDeveloper,
+                         BackendDeveloper):
     pass
 
     def create_web_application(self) -> None:
