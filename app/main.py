@@ -39,21 +39,11 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(
-    FrontendDeveloper,
-    BackendDeveloper
+    BackendDeveloper,
+    FrontendDeveloper
 ):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = [
-            "JavaScript",
-            "CSS",
-            "HTML",
-            "Python",
-            "SQL",
-            "Django",
-            "Java",
-            "Android studio"
-        ]
 
     def create_web_application(self) -> None:
         print(
