@@ -1,4 +1,4 @@
-class SoftWearEngineer:
+class SoftwareEngineer:
     def __init__(self, name: str) -> None:
         self.name = name
         self.skills = []
@@ -7,7 +7,7 @@ class SoftWearEngineer:
         self.skills.append(skill)
 
 
-class FrontendDeveloper(SoftWearEngineer):
+class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["JavaScript", "HTML", "CSS"])
@@ -17,7 +17,7 @@ class FrontendDeveloper(SoftWearEngineer):
         return "<h1>Hello world</h1>"
 
 
-class BackendDeveloper(SoftWearEngineer):
+class BackendDeveloper(SoftwareEngineer):
     def __int__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["Python", "SQL", "Django"])
@@ -27,7 +27,7 @@ class BackendDeveloper(SoftWearEngineer):
         return "http://127.0.0.1:8000"
 
 
-class AndroidDeveloper(SoftWearEngineer):
+class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["Java", "Android studio"])
@@ -39,8 +39,7 @@ class AndroidDeveloper(SoftWearEngineer):
 
 class FullStackDeveloper(
     FrontendDeveloper,
-    BackendDeveloper,
-    AndroidDeveloper
+    BackendDeveloper
 ):
     def create_web_application(self) -> None:
         print(
