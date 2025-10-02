@@ -4,13 +4,14 @@ class SoftwareEngineer:
         self.skills = []
 
     def learn_skill(self, skill: str) -> None:
-        self.skills.append(skill)
+        if skill not in self.skills:
+            self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = ["JavaScript", "HTML", "CSS"]
+        self.skills = ["JavaScript", "CSS", "HTML"]
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
