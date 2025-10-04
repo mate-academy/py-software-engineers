@@ -12,9 +12,9 @@ class FrontendDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills+="HTML"
-        self.skills+="CSS"
-        self.skills+="JavaScript"
+        self.skills += "HTML"
+        self.skills += "CSS"
+        self.skills += "JavaScript"
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -25,9 +25,9 @@ class BackendDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills+="Python"
-        self.skills+="Django"
-        self.skills+="SQL"
+        self.skills += "Python"
+        self.skills += "Django"
+        self.skills += "SQL"
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
