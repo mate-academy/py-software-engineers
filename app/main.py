@@ -1,7 +1,10 @@
+from typing import List
+
+
 class SoftwareEngineer:
     def __init__(self, name: str) -> None:
         self.name = name
-        self.skills = []
+        self.skills: List[str] = []
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
@@ -40,6 +43,8 @@ class AndroidDeveloper(SoftwareEngineer):
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
+        # Ensure frontend skills are also added
+        self.skills.extend(["JavaScript", "CSS", "HTML"])
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
