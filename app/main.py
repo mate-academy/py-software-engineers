@@ -30,14 +30,19 @@ class BackendDeveloper(SoftwareEngineer):
 class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills.extend(["Android studio", "Java"])
+        self.skills.extend(["Java", "Android studio"])  # Correct order
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
+class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
+    def __init__(self, name: str) -> None:
+        SoftwareEngineer.__init__(self, name)
+        self.skills.extend(["Python", "SQL", "Django"])
+        self.skills.extend(["JavaScript", "HTML", "CSS"])
+
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
