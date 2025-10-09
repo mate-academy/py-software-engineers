@@ -9,7 +9,7 @@ class SoftwareEngineer:
 
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
-        super().__init__(name=name)
+        super().__init__(name)
         self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_awesome_web_page(self) -> str:
@@ -19,7 +19,7 @@ class FrontendDeveloper(SoftwareEngineer):
 
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
-        super().__init__(name=name)
+        super().__init__(name)
         self.skills.extend(["Python", "SQL", "Django"])
 
     def create_powerful_api(self) -> str:
@@ -29,7 +29,7 @@ class BackendDeveloper(SoftwareEngineer):
 
 class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
-        super().__init__(name=name)
+        super().__init__(name)
         self.skills.extend(["Java", "Android studio"])
 
     def create_smooth_mobile_app(self) -> str:
@@ -37,12 +37,11 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
+class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
-        # Chama o __init__ do FrontendDeveloper, que adiciona as skills de front
-        super().__init__(name)
-        # Adiciona manualmente as skills de back-end
+        SoftwareEngineer.__init__(self, name)
         self.skills.extend(["Python", "SQL", "Django"])
+        self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
