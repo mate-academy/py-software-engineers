@@ -48,9 +48,10 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
         backend_skills = ["Python", "SQL", "Django"]
         frontend_skills = ["JavaScript", "HTML", "CSS"]
         super().__init__(name)
-        self.skills = list(set(self.skills + frontend_skills + backend_skills))
+        self.skills = []
+        self.skills.extend(backend_skills + frontend_skills)
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
-        super().create_powerful_api()
-        super().create_awesome_web_page()
+        self.create_powerful_api()
+        self.create_awesome_web_page()
