@@ -1,16 +1,19 @@
 class SoftwareEngineer:
-    def __init__(self, name: str, skills=None) -> None:  # noqa: ANN001
+
+    def __init__(self, name: str) -> None:
         self.name = name
-        self.skills = skills if skills is not None else []
+        self.skills = []
 
     def learn_skill(self, skill: str) -> None:
-        self.skills.append(skill)
+        if skill not in self.skills:
+            self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
-        super().__init__(name, ["JavaScript", "HTML", "CSS"])
+        super().__init__(name)
+        self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -20,7 +23,8 @@ class FrontendDeveloper(SoftwareEngineer):
 class BackendDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
-        super().__init__(name, ["Python", "SQL", "Django"])
+        super().__init__(name)
+        self.skills.extend(["Python", "SQL", "Django"])
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -30,7 +34,8 @@ class BackendDeveloper(SoftwareEngineer):
 class AndroidDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
-        super().__init__(name, ["Java", "Android studio"])
+        super().__init__(name)
+        self.skills.extend(["Java", "Android studio"])
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
@@ -42,10 +47,10 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
         backend_skills = ["Python", "SQL", "Django"]
         frontend_skills = ["JavaScript", "HTML", "CSS"]
-        default_skills = backend_skills + frontend_skills
-        SoftwareEngineer.__init__(self, name, default_skills)
+        super().__init__(name)
+        self.skills = list(set(self.skills + frontend_skills + backend_skills))
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
-        BackendDeveloper.create_powerful_api(self)
-        FrontendDeveloper.create_awesome_web_page(self)
+        super().create_powerful_api()
+        super().create_awesome_web_page()
