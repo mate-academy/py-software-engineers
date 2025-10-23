@@ -50,7 +50,10 @@ class AndroidDeveloper(SoftwareEngineer):
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = BackendDeveloper.DEFAULT_SKILLS.copy() + FrontendDeveloper.DEFAULT_SKILLS.copy()
+        self.skills = (
+            BackendDeveloper.DEFAULT_SKILLS.copy()
+            + FrontendDeveloper.DEFAULT_SKILLS.copy()
+        )
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
