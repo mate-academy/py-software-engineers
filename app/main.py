@@ -1,16 +1,22 @@
+from typing import List
+
+
 class SoftwareEngineer:
     def __init__(self, name: str) -> None:
         self.name = name
-        self.skills: list[str] = []
+        self.skills: List[str] = []
 
     def learn_skill(self, skill: str) -> None:
-        self.skills.append(skill)
+        if skill not in self.skills:
+            self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
+    DEFAULT_SKILLS = ["JavaScript", "CSS", "HTML"]
+
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills.extend(["JavaScript", "CSS", "HTML"])
+        self.skills = self.DEFAULT_SKILLS.copy()
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -18,9 +24,11 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
+    DEFAULT_SKILLS = ["Python", "SQL", "Django"]
+
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills.extend(["Python", "SQL", "Django"])
+        self.skills = self.DEFAULT_SKILLS.copy()
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -28,19 +36,21 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
+    DEFAULT_SKILLS = ["Java", "Android studio"]
+
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills.extend(["Java", "Android studio"])
+        self.skills = self.DEFAULT_SKILLS.copy()
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(SoftwareEngineer):
+class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills.extend(["Python", "JavaScript", "HTML", "CSS"])
+        self.skills = BackendDeveloper.DEFAULT_SKILLS.copy() + FrontendDeveloper.DEFAULT_SKILLS.copy()
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
