@@ -48,15 +48,13 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(
-    BackendDeveloper,
-    FrontendDeveloper
-):
+class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        backend_skills = BackendDeveloper(self.name)
-        frontend_skills = FrontendDeveloper(self.name)
-        self.skills = backend_skills.skills + frontend_skills.skills
+        # Combine the skill sets from both parent classes directly
+        backend_skills = ["Python", "SQL", "Django"]
+        frontend_skills = ["JavaScript", "CSS", "HTML"]
+        self.skills = backend_skills + frontend_skills
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
