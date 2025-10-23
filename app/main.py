@@ -1,57 +1,25 @@
 class SoftwareEngineer:
-    def __init__(self, name):
+    def __init__(self, name: str) -> None:
         self.name = name
-        self.skills = []
+        self.skills: list[str] = []
 
-    def learn_skill(self, skill: str):
+    def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
 
 
-class FrontendDeveloper(SoftwareEngineer):
-    def __init__(self, name):
-        super().__init__(name)
-        self.skills += ["JavaScript", "HTML", "CSS"]
-
-    def create_awesome_web_page(self):
-        print(f"{self.name} is creating a webpage...")
-        return "<h1>Hello world</h1>"
-
-
-class BackendDeveloper(SoftwareEngineer):
-    def __init__(self, name):
-        super().__init__(name)
-        self.skills += ["Python", "SQL", "Django"]
-
-    def create_powerful_api(self):
-        print(f"{self.name} is creating an API...")
-        return "http://127.0.0.1:8000"
-
-
-class AndroidDeveloper(SoftwareEngineer):
-    def __init__(self, name):
-        super().__init__(name)
-        self.skills += ["Java", "Android studio"]
-
-    def create_smooth_mobile_app(self):
-        print(f"{self.name} is creating a mobile app...")
-        return "Ads every three swipes"
-
-
 class FullStackDeveloper(SoftwareEngineer):
-    def __init__(self, name):
+    def __init__(self, name: str) -> None:
         super().__init__(name)
-        # Dodajemy umiejętności backendowe i frontendowe
-        self.skills += ["Python", "SQL", "Django", "JavaScript", "HTML", "CSS"]
+        self.skills.extend(["Python", "JavaScript", "HTML", "CSS"])
 
-    def create_powerful_api(self):
-        print(f"{self.name} is creating an API...")
-        return "http://127.0.0.1:8000"
+    def create_powerful_tool(self) -> str:
+        print(f"{self.name} is creating a powerful tool...")
+        return "Tool created using an API."
 
-    def create_awesome_web_page(self):
-        print(f"{self.name} is creating a webpage...")
-        return "<h1>Hello world</h1>"
+    def create_awesome_web_app(self) -> str:
+        print(f"{self.name} is creating a webapp...")
+        return "Webapp created using Django."
 
-    def create_web_application(self):
-        print(f"{self.name} started creating a web application...")
-        self.create_powerful_api()
-        self.create_awesome_web_page()
+    def create_awesome_mobile_app(self) -> str:
+        print(f"{self.name} is creating a mobile app...")
+        return "Mobile app created using React Native."
