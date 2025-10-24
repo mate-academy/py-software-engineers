@@ -12,11 +12,9 @@ class SoftwareEngineer:
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    DEFAULT_SKILLS = ["JavaScript", "CSS", "HTML"]
-
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = self.DEFAULT_SKILLS.copy()
+        self.skills += ["JavaScript", "CSS", "HTML"]
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -24,11 +22,9 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    DEFAULT_SKILLS = ["Python", "SQL", "Django"]
-
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = self.DEFAULT_SKILLS.copy()
+        self.skills += ["Python", "SQL", "Django"]
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -36,11 +32,9 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-    DEFAULT_SKILLS = ["Java", "Android studio"]
-
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = self.DEFAULT_SKILLS.copy()
+        self.skills += ["Java", "Android studio"]
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
@@ -51,19 +45,11 @@ class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills = (
-            BackendDeveloper.DEFAULT_SKILLS.copy()
-            + FrontendDeveloper.DEFAULT_SKILLS.copy()
+            BackendDeveloper(name).skills +
+            FrontendDeveloper(name).skills
         )
-
-    def create_powerful_api(self) -> str:
-        print(f"{self.name} is creating an API...")
-        return "http://127.0.0.1:8000"
-
-    def create_awesome_web_page(self) -> str:
-        print(f"{self.name} is creating a webpage...")
-        return "<h1>Hello world</h1>"
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
-        print(f"{self.name} is creating an API...")
-        print(f"{self.name} is creating a webpage...")
+        self.create_powerful_api()
+        self.create_awesome_web_page()
