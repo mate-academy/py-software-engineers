@@ -37,13 +37,14 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
+# ✅ Правильний порядок наслідування для правильного MRO і порядку навичок
+class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        # Ensure both backend and frontend skills are included
-        frontend_skills = ["JavaScript", "HTML", "CSS"]
-        missing_skills = [s for s in frontend_skills if s not in self.skills]
-        self.skills.extend(missing_skills)
+        backend_skills = ["Python", "SQL", "Django"]
+        missing_skills = [s for s in backend_skills if s not in self.skills]
+        # додаємо бекенд-скіли на початок
+        self.skills = missing_skills + self.skills
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
