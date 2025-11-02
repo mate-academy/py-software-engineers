@@ -7,7 +7,6 @@ class SoftwareEngineer:
         self.skills.append(skill)
 
 
-# if __name__ == "__main__":
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
