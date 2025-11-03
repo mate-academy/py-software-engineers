@@ -24,7 +24,6 @@ class BackendDeveloper(SoftwareEngineer):
         super().__init__(name)
         self.skills.extend(["Python", "SQL", "Django"])
 
-
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
         return "http://127.0.0.1:8000"
@@ -46,7 +45,3 @@ class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
         print(f"{self.name} is creating a web application...")
         self.create_powerful_api()
         self.create_awesome_web_page()
-
-
-engineer = FullStackDeveloper("Alisa")
-print(engineer.skills)
