@@ -40,7 +40,6 @@ class AndroidDeveloper(SoftwareEngineer):
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        # об'єднуємо навички з backend і frontend без дублікатів
         self.skills = list(dict.fromkeys(
             self.skills + ["JavaScript", "CSS", "HTML"]
         ))
