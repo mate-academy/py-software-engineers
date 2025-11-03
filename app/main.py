@@ -10,7 +10,7 @@ class SoftwareEngineer:
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills.extend(["JavaScript", "CSS", "HTML"])
+        self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -37,12 +37,7 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
-    def __init__(self, name: str) -> None:
-        super().__init__(name)
-        self.skills = list(dict.fromkeys(
-            self.skills + ["JavaScript", "CSS", "HTML"]
-        ))
+class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
