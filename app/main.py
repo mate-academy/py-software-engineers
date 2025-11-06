@@ -38,16 +38,9 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
 
-    skills = ["Python", "SQL", "Django", "JavaScript", "HTML", "CSS"]
+    skills = BackendDeveloper.skills + FrontendDeveloper.skills
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
         self.create_awesome_web_page()
-
-
-# new_skills = ["one", "two"]
-# engieenier = BackendDeveloper("Max")
-# print(engieenier.skills)
-# engieenier.learn_skill(new_skills)
-# print(engieenier.skills)
