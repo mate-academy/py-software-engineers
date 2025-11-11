@@ -34,7 +34,6 @@ class AndroidDeveloper(SoftwareEngineer):
         super().__init__(name)
         self.skills.extend(["Java", "Android studio"])
 
-
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
         return "Ads every three swipes"
