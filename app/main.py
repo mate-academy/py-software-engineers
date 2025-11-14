@@ -38,8 +38,7 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(
     BackendDeveloper,
-    FrontendDeveloper,
-    SoftwareEngineer
+    FrontendDeveloper
 ):
     base_skills = BackendDeveloper.base_skills + FrontendDeveloper.base_skills
 
