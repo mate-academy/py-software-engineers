@@ -1,4 +1,3 @@
-# write your code here
 class SoftwareEngineer:
     def __init__(self, name: str) -> None:
         self.name = name
