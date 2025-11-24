@@ -4,7 +4,7 @@ class SoftwareEngineer:
         self.skills: list[str] = []
 
     def learn_skill(self, skill: str) -> None:
-        self.skills.extend([skill])
+        self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
@@ -37,7 +37,7 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
+class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
