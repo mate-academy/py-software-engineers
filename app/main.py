@@ -13,7 +13,6 @@ class SoftwareEngineer:
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        # Порядок как в тестах: ["JavaScript", "CSS", "HTML"]
         self.skills.extend(["JavaScript", "CSS", "HTML"])
 
     def create_awesome_web_page(self) -> str:
@@ -43,9 +42,8 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
-        # Инициализируем только базовый класс,
-        # а нужные навыки добавляем вручную один раз.
         SoftwareEngineer.__init__(self, name)
+        # ["Python", "SQL", "Django", "JavaScript", "CSS", "HTML"]
         self.skills.extend(
             ["Python", "SQL", "Django", "JavaScript", "CSS", "HTML"],
         )
