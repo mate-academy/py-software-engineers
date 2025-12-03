@@ -126,7 +126,7 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
+class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     """
     Developer capable of working with both backend and frontend technologies.
     Responsibilities:
