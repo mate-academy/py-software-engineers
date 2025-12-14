@@ -2,18 +2,18 @@ from typing import List
 
 
 class SoftwareEngineer:
+    BASE_SKILLS: List[str] = []
+
     def __init__(self, name: str) -> None:
-        self.name: str = name
-        self.skills: List[str] = []
+        self.name = name
+        self.skills = list(self.BASE_SKILLS)
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    def __init__(self, name: str) -> None:
-        super().__init__(name)
-        self.skills += ["JavaScript", "HTML", "CSS"]
+    BASE_SKILLS = ["JavaScript", "HTML", "CSS"]
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -21,9 +21,7 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    def __init__(self, name: str) -> None:
-        super().__init__(name)
-        self.skills += ["Python", "SQL", "Django"]
+    BASE_SKILLS = ["Python", "SQL", "Django"]
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -31,16 +29,27 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-    def __init__(self, name: str) -> None:
-        super().__init__(name)
-        self.skills += ["Java", "Android studio"]
+    BASE_SKILLS = ["Java", "Android studio"]
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
+class FullStackDeveloper(SoftwareEngineer):
+    BASE_SKILLS = [
+        "Python", "SQL", "Django",
+        "JavaScript", "HTML", "CSS"
+    ]
+
+    def create_powerful_api(self) -> str:
+        print(f"{self.name} is creating an API...")
+        return "http://127.0.0.1:8000"
+
+    def create_awesome_web_page(self) -> str:
+        print(f"{self.name} is creating a webpage...")
+        return "<h1>Hello world</h1>"
+
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
