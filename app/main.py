@@ -48,7 +48,7 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(FrontEndDevelopper, 
+class FullStackDeveloper(FrontEndDevelopper,
                          BackendDeveloper):
     def __init__(self,
                  name: str) -> None:
