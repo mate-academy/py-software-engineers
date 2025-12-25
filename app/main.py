@@ -10,7 +10,7 @@ class SoftwareEngineer(object):
         self.skills.append(skill)
 
 
-class FrontEndDevelopper(SoftwareEngineer):
+class FrontendDevelopper(SoftwareEngineer):
     def __init__(self,
                  name: str) -> None:
         super().__init__(name=name)
@@ -48,7 +48,7 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(FrontEndDevelopper,
+class FullStackDeveloper(FrontendDevelopper,
                          BackendDeveloper):
     def __init__(self,
                  name: str) -> None:
