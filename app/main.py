@@ -14,7 +14,7 @@ class FrontendDeveloper(SoftwareEngineer):
         super().__init__(name)
         self.skills.extend(["JavaScript", "HTML", "CSS"])
 
-    def create_awesome_web_page(self) -> None:
+    def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
         return "<h1>Hello world</h1>"
 
@@ -24,7 +24,7 @@ class BackendDeveloper(SoftwareEngineer):
         super().__init__(name)
         self.skills.extend(["Python", "SQL", "Django"])
 
-    def create_powerful_api(self) -> None:
+    def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
         return "http://127.0.0.1:8000"
 
@@ -34,7 +34,7 @@ class AndroidDeveloper(SoftwareEngineer):
         super().__init__(name)
         self.skills.extend(["Java", "Android studio"])
 
-    def create_smooth_mobile_app(self) -> None:
+    def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
         return "Ads every three swipes"
 
@@ -42,7 +42,7 @@ class AndroidDeveloper(SoftwareEngineer):
 class FullStackDeveloper(SoftwareEngineer,
                          FrontendDeveloper,
                          BackendDeveloper):
-    def create_web_application(self) :
+    def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
         self.create_awesome_web_page()
