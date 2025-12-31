@@ -11,7 +11,8 @@ class SoftwareEngineer:
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-
+        if self.skills:
+            self.skills.clear()
         self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_awesome_web_page(self) -> str:
@@ -22,6 +23,8 @@ class FrontendDeveloper(SoftwareEngineer):
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
+        if self.skills:
+            self.skills.clear()
         self.skills.extend(["Python", "SQL", "Django"])
 
     def create_powerful_api(self) -> str:
@@ -43,8 +46,10 @@ class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
         FrontendDeveloper.__init__(self, name)
         frontend_skills = self.skills.copy()
+
         BackendDeveloper.__init__(self, name)
-        self.skills = list(set(self.skills + frontend_skills))
+        self.skills.extend(frontend_skills)
+        print("Debug after frontend init:", self.skills)
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
