@@ -11,6 +11,7 @@ class SoftwareEngineer:
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
+
         self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_awesome_web_page(self) -> str:
@@ -40,7 +41,10 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
-        super().__init__(name)
+        FrontendDeveloper.__init__(self, name)
+        frontend_skills = self.skills.copy()
+        BackendDeveloper.__init__(self, name)
+        self.skills = list(set(self.skills + frontend_skills))
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
