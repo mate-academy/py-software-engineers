@@ -4,7 +4,7 @@ class SoftwareEngineer:
         self.name = name
         self.skills = []
     
-    def learn_skill(self, skill: str | list) -> None:
+    def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
 
 class FrontendDeveloper(SoftwareEngineer):
@@ -37,7 +37,7 @@ class AndroidDeveloper(SoftwareEngineer):
     
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name) -> None:
-        super().__init__(name)
+        self.name = name
 
     # this is the final step
     def create_web_application(self) -> None:
