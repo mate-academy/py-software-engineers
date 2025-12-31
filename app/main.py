@@ -36,7 +36,8 @@ class AndroidDeveloper(SoftwareEngineer):
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper, AndroidDeveloper):
     def __init__(self, name) -> None:
         self.name = name
-
+        
+    # this is the final step
     def create_web_application(self) -> None:
         print (f"{self.name} started creating a web application...")
         self.create_awesome_web_page()
