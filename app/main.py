@@ -39,10 +39,9 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
-        # Chamada explícita dos construtores para combinar as listas de skills
-        # Isso resolve a limitação do MRO padrão que o mentor apontou
-        BackendDeveloper.__init__(self, name)
-        FrontendDeveloper.__init__(self, name)
+        # Usamos apenas um super(), que percorrerá o MRO 
+        # chamando os inits de Backend e Frontend sem resetar a lista
+        super().__init__(name)
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
