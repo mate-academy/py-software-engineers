@@ -7,8 +7,7 @@ class SoftwareEngineer:
         self.skills.append(skill)
 
     def learn_many_skills(self, *skills_list) -> None:
-        for skill in skills_list:
-            self.learn_skill(skill)
+        self.skills += list(skills_list)
 
 
 class FrontendDeveloper(SoftwareEngineer):
