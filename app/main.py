@@ -45,3 +45,15 @@ class AndroidDeveloper(SoftwareEngineer):
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
         return "Ads every three swipes"
+
+
+class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+
+    def create_web_application(self) -> None:
+        print(f"{self.name} is creating a web application...")
+        api = self.create_powerful_api()
+        webpage = self.create_awesome_web_page()
+        print(api)
+        print(webpage)
