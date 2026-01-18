@@ -1,10 +1,7 @@
 class SoftwareEngineer:
-    def __init__(self, name: str, skills: list | None = None) -> None:
+    def __init__(self, name: str) -> None:
         self.name = name
-        if skills is None:
-            self.skills = []
-        else:
-            self.skills = skills
+        self.skills = []
 
     def learn_skill(self, skill: str) -> None:
         if skill not in self.skills:
@@ -20,7 +17,7 @@ class FrontendDeveloper(SoftwareEngineer):
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
-        return "<h1>Hello world!</h1>"
+        return "<h1>Hello world</h1>"
 
 
 class BackendDeveloper(SoftwareEngineer):
@@ -52,8 +49,6 @@ class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
         super().__init__(name)
 
     def create_web_application(self) -> None:
-        print(f"{self.name} is creating a web application...")
-        api = self.create_powerful_api()
-        webpage = self.create_awesome_web_page()
-        print(api)
-        print(webpage)
+        print(f"{self.name} started creating a web application...")
+        self.create_powerful_api()
+        self.create_awesome_web_page()
