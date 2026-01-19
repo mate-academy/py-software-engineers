@@ -3,15 +3,17 @@ class SoftwareEngineer:
         self.name = name
         self.skills = []
 
-    def learn_skill(self, new_skills: list) -> None:
-        for skill in new_skills:
-            self.skills += skill
+    def learn_skill(self, new_skill: str) -> None:
+        self.skills += [new_skill]
 
 
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.learn_skill(["JavaScript", "HTML", "CSS"])
+
+    def add_skills(self):
+        for skill in ["JavaScript", "HTML", "CSS"]:
+            self.learn_skill(skill)
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -21,7 +23,10 @@ class FrontendDeveloper(SoftwareEngineer):
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.learn_skill(["Python", "SQL", "Django"])
+
+    def add_skills(self):
+        for skill in ["Python", "SQL", "Django"]:
+            self.learn_skill(skill)
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -31,7 +36,8 @@ class BackendDeveloper(SoftwareEngineer):
 class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.learn_skill(["Java", "Android studio"])
+        for skill in ["Java", "Android studio"]:
+            self.learn_skill(skill)
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
@@ -41,8 +47,14 @@ class AndroidDeveloper(SoftwareEngineer):
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
+        FrontendDeveloper.add_skills(self)
+        BackendDeveloper.add_skills(self)
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
         self.create_awesome_web_page()
+
+mike = FrontendDeveloper("Mike")
+
+print(mike.skills)
