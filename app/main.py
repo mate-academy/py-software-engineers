@@ -1,16 +1,15 @@
-# write your code here
 class SoftwareEngineer:
-    def __init__(self, name):
+    def __init__(self, name: str) -> None:
         self.name = name
         self.skills = []
 
-    def learn_skill(self, new_skills: list):
+    def learn_skill(self, new_skills: list) -> None:
         for skill in new_skills:
             self.skills += skill
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    def __init__(self, name) -> None:
+    def __init__(self, name: str) -> None:
         super().__init__(name)
         self.learn_skill(["JavaScript", "HTML", "CSS"])
 
@@ -20,7 +19,7 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    def __init__(self, name) -> None:
+    def __init__(self, name: str) -> None:
         super().__init__(name)
         self.learn_skill(["Python", "SQL", "Django"])
 
@@ -30,7 +29,7 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-    def __init__(self, name) -> None:
+    def __init__(self, name: str) -> None:
         super().__init__(name)
         self.learn_skill(["Java", "Android studio"])
 
@@ -40,7 +39,7 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
-    def __init__(self, name) -> None:
+    def __init__(self, name: str) -> None:
         super().__init__(name)
 
     def create_web_application(self) -> None:
