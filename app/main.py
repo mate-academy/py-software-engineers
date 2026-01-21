@@ -1,7 +1,7 @@
 class SoftwareEngineer:
     def __init__(self, name: str) -> None:
         self.name = name
-        self.skills = []
+        self.skills: list[str] = []
 
     def learn_skill(self, skill: str) -> None:
         if skill not in self.skills:
@@ -9,12 +9,11 @@ class SoftwareEngineer:
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    DEFAULT_SKILLS = ("JavaScript", "HTML", "CSS")
-
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        for skill in self.DEFAULT_SKILLS:
-            self.learn_skill(skill)
+        self.learn_skill("JavaScript")
+        self.learn_skill("HTML")
+        self.learn_skill("CSS")
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -22,12 +21,11 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    DEFAULT_SKILLS = ("Python", "SQL", "Django")
-
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        for skill in self.DEFAULT_SKILLS:
-            self.learn_skill(skill)
+        self.learn_skill("Python")
+        self.learn_skill("SQL")
+        self.learn_skill("Django")
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -35,12 +33,10 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-    DEFAULT_SKILLS = ("Java", "Android studio")
-
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        for skill in self.DEFAULT_SKILLS:
-            self.learn_skill(skill)
+        self.learn_skill("Java")
+        self.learn_skill("Android studio")
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
@@ -49,13 +45,7 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
-        SoftwareEngineer.__init__(self, name)
-
-        for skill in BackendDeveloper.DEFAULT_SKILLS:
-            self.learn_skill(skill)
-
-        for skill in FrontendDeveloper.DEFAULT_SKILLS:
-            self.learn_skill(skill)
+        super().__init__(name)
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
