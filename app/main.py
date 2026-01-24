@@ -62,3 +62,35 @@ class FrontendDeveloper(SoftwareEngineer):
         """
         print(f"{self.name} is creating a webpage...")
         return "<h1>Hello world</h1>"
+
+
+class BackendDeveloper(SoftwareEngineer):
+    """
+    It represents a backend developer who can create APIs.
+    """
+
+    def __init__(
+        self,
+        name: str
+    ) -> None:
+        """
+        Initializes the developer's name and manages the skills they learned.
+
+        Attributes:
+            name (str): Developer's name.
+            skills (list[str]): Skills learned.
+        """
+        super().__init__(name)
+        self.skills += ["Python", "SQL", "Django"]
+
+    def create_powerful_api(
+        self
+    ) -> str:
+        """
+        Displays a message in the console and returns the API's address.
+
+        Returns:
+            str: the address of the API.
+        """
+        print(f"{self.name} is creating an API...")
+        return "http://127.0.0.1:8000"
