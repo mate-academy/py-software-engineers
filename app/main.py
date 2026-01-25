@@ -94,3 +94,35 @@ class BackendDeveloper(SoftwareEngineer):
         """
         print(f"{self.name} is creating an API...")
         return "http://127.0.0.1:8000"
+
+
+class AndroidDeveloper(SoftwareEngineer):
+    """
+    It represents an android developer who can create apps.
+    """
+
+    def __init__(
+        self,
+        name: str
+    ) -> None:
+        """
+        Initializes the developer's name and manages the skills they learned.
+
+        Attributes:
+            name (str): Developer's name.
+            skills (list[str]): Skills learned.
+        """
+        super().__init__(name)
+        self.skills += ["Java", "Android studio"]
+
+    def create_smooth_mobile_app(
+        self
+    ) -> str:
+        """
+        Displays a message in the console and returns UX of the created app.
+
+        Returns:
+            str: The UX.
+        """
+        print(f"{self.name} is creating a mobile app...")
+        return "Ads every three swipes"
