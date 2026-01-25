@@ -126,3 +126,32 @@ class AndroidDeveloper(SoftwareEngineer):
         """
         print(f"{self.name} is creating a mobile app...")
         return "Ads every three swipes"
+
+
+class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
+    """
+    It represents a fullstack developer who can create web apps.
+    """
+
+    def __init__(
+        self,
+        name: str
+    ) -> None:
+        """
+        Initializes the developer's name and manages the skills they learned.
+
+        Attributes:
+            name (str): Developer's name.
+            skills (list[str]): Skills learned.
+        """
+        super().__init__(name)
+
+    def create_web_application(
+        self
+    ) -> None:
+        """
+        Displays a message in the console.
+        """
+        print(f"{self.name} started creating a web application...")
+        self.create_powerful_api()
+        self.create_awesome_web_page()
