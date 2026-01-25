@@ -21,15 +21,15 @@ class SoftwareEngineer:
 
     def learn_skill(
         self,
-        new_skill: str
+        skill: str
     ) -> None:
         """
         Stores the computer skill that the engineer learned.
 
         Args:
-            new_skill (str): the skill learned.
+            skill (str): the skill learned.
         """
-        self.skills.append(new_skill)
+        self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
