@@ -133,12 +133,6 @@ class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     It represents a fullstack developer who can create web apps.
     """
 
-    def __init__(
-        self,
-        name: str
-    ) -> None:
-        super().__init__(name)
-
     def create_web_application(
         self
     ) -> None:
