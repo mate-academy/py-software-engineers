@@ -40,16 +40,25 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
-        # Call FrontendDeveloper initializer on current instance
         FrontendDeveloper.__init__(self, name)
-        # Save frontend skills before calling backend init
-        frontend_skills = self.skills.copy()
-        # Call BackendDeveloper initializer on current instance
-        BackendDeveloper.__init__(self, name)
-        # Extend backend skills with frontend skills
-        self.skills.extend(frontend_skills)
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
         self.create_awesome_web_page()
+
+if __name__ == "__main__":
+    frontend_dev = FrontendDeveloper("Alice")
+    backend_dev = BackendDeveloper("Bob")
+    android_dev = AndroidDeveloper("Charlie")
+    fullstack_dev = FullStackDeveloper("Dave")
+
+    print(f"{frontend_dev.name} skills: {frontend_dev.skills}")
+    print(f"{backend_dev.name} skills: {backend_dev.skills}")
+    print(f"{android_dev.name} skills: {android_dev.skills}")
+    print(f"{fullstack_dev.name} skills: {fullstack_dev.skills}")
+
+    frontend_dev.create_awesome_web_page()
+    backend_dev.create_powerful_api()
+    android_dev.create_smooth_mobile_app()
+    fullstack_dev.create_web_application()
