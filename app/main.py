@@ -1,7 +1,7 @@
 class SoftwareEngineer:
-    def __init__(self, name: str, skills=None) -> None:  # noqa: ANN001
+    def __init__(self, name: str,) -> None:
         self.name = name
-        self.skills = skills if skills is not None else []
+        self.skills = []
 
     def learn_skill(self, skill: str) -> None:
         if skill not in self.skills:
@@ -9,11 +9,9 @@ class SoftwareEngineer:
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    def __init__(self, name: str, skills=None) -> None:  # noqa: ANN001
-        super().__init__(name, skills)
-        if self.skills is None:
-            self.skills = []
-        self.skills.extend(["JavaScript", "HTML", "CSS"])
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        self.skills = ["JavaScript", "HTML", "CSS"]
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -21,11 +19,9 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    def __init__(self, name: str, skills=None) -> None:  # noqa: ANN001
-        super().__init__(name, skills)
-        if self.skills is None:
-            self.skills = []
-        self.skills.extend(["Python", "Django", "SQL"])
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        self.skills = ["Python", "Django", "SQL"]
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -33,11 +29,9 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-    def __init__(self, name: str, skills=None) -> None:  # noqa: ANN001
-        super().__init__(name, skills)
-        if self.skills is None:
-            self.skills = []
-        self.skills.extend(["Java", "Android studio"])
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        self.skills = ["Java", "Android studio"]
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
@@ -45,10 +39,14 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
-    def __init__(self, name: str, skills=None) -> None:  # noqa: ANN001
-        super().__init__(name, skills)
-        if self.skills is None:
-            self.skills = []
+    def __init__(self, name: str) -> None:
+        # Initialize base class first
+        SoftwareEngineer.__init__(self, name)
+        # Create temporary instances to get their skills
+        frontend_temp = FrontendDeveloper(name)
+        backend_temp = BackendDeveloper(name)
+        # Combine skills from both parent classes
+        self.skills = frontend_temp.skills + backend_temp.skills
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
