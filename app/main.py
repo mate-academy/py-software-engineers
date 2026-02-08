@@ -11,7 +11,7 @@ class SoftwareEngineer:
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = ["JavaScript", "HTML", "CSS"]
+        self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -21,7 +21,7 @@ class FrontendDeveloper(SoftwareEngineer):
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = ["Python", "Django", "SQL"]
+        self.skills.extend(["Python", "SQL", "Django"])
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -31,7 +31,7 @@ class BackendDeveloper(SoftwareEngineer):
 class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills = ["Java", "Android studio"]
+        self.skills.extend(["Java", "Android studio"])
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
@@ -40,13 +40,14 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
-        # Initialize base class first
-        SoftwareEngineer.__init__(self, name)
-        # Create temporary instances to get their skills
-        frontend_temp = FrontendDeveloper(name)
-        backend_temp = BackendDeveloper(name)
-        # Combine skills from both parent classes
-        self.skills = frontend_temp.skills + backend_temp.skills
+        # Call FrontendDeveloper initializer on current instance
+        FrontendDeveloper.__init__(self, name)
+        # Save frontend skills before calling backend init
+        frontend_skills = self.skills.copy()
+        # Call BackendDeveloper initializer on current instance
+        BackendDeveloper.__init__(self, name)
+        # Extend backend skills with frontend skills
+        self.skills.extend(frontend_skills)
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
