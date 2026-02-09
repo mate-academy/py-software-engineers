@@ -37,12 +37,9 @@ class AndroidDeveloper(SoftwareEngineer):
         return "Ads every three swipes"
 
 
-class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
-    def __init__(self, name: str) -> None:
-        super().__init__(name)
-
+class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
-        api_address = self.create_powerful_api()
-        page_code = self.create_awesome_web_page()
-        return api_address, page_code
+        self.create_powerful_api()
+        self.create_awesome_web_page()
+
