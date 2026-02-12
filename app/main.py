@@ -8,12 +8,6 @@ class SoftwareEngineer:
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
 
-    def __repr__(self):
-        return self
-
-    def __str__(self):
-        return self
-
 
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
