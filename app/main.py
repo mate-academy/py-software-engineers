@@ -17,7 +17,7 @@ class FrontendDeveloper(SoftwareEngineer):
         return "<h1>Hello world</h1>"
 
 
-dlass BackendDeveloper(SoftwareEngineer):
+class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["Python", "SQL", "Django"])
