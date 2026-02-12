@@ -1,5 +1,4 @@
 class SoftwareEngineer:
-    skills = list
 
     def __init__(self, name: str) -> None:
         self.name = name
