@@ -5,8 +5,8 @@ class SoftwareEngineer:
         self.name = name
 
     def learn_skill(self, *skill: str) -> None:
-        for s in skill:
-            self.skills.append(s)
+        for _skill in skill:
+            self.skills.append(_skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
