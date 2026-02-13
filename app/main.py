@@ -22,7 +22,7 @@ class FrontendDeveloper(SoftwareEngineer):
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.learn_skill(["Python", "SQL", "Django"])
+        self.learn_skill("Python", "SQL", "Django")
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -32,7 +32,7 @@ class BackendDeveloper(SoftwareEngineer):
 class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.learn_skill(["Java", "Android studio"])
+        self.learn_skill("Java", "Android studio")
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
