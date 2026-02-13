@@ -6,7 +6,13 @@ class SoftwareEngineer:
         self.name = name
 
     def learn_skill(self, skill: str) -> None:
-        if skill not in self.skills:
+        exists: bool = False
+        for _skill in self.skills:
+            if _skill.lower() == skill.lower():
+                exists = True
+                break
+
+        if not exists:
             self.skills.append(skill)
 
 
