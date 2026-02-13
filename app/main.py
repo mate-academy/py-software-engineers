@@ -1,6 +1,7 @@
 # write your code here
 class SoftwareEngineer:
     skills: list[str] = list()
+
     def __init__(self, name: str) -> None:
         self.name = name
 
@@ -51,4 +52,3 @@ class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
         print(f"{self.name} started creating a web application...")
         super().create_powerful_api()
         super().create_awesome_web_page()
-
