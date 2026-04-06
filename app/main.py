@@ -1,6 +1,3 @@
-from __future__ import annotations
-
-
 class SoftwareEngineer:
     def __init__(self, name: str) -> None:
         self.name = name
