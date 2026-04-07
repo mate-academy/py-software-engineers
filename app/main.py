@@ -5,14 +5,14 @@ class SoftwareEngineer:
         self.skills = []
 
     def learn_skill(self, skill: str) -> None:
-        self.skills.append(skill)
+        self.skills += [skill]
 
 
 class FrontendDeveloper(SoftwareEngineer):
 
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        self.skills.extend(["JavaScript", "HTML'", "CSS"])
+        self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -42,7 +42,6 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
-    pass
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
@@ -71,7 +70,9 @@ class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
 # app = android_dev.create_smooth_mobile_app()
 # print(app)
 #
-# full_stack_dev = FullStackDeveloper("Tom")
-# print(full_stack_dev.skills)
-#
-# full_stack_dev.create_web_application()
+
+
+full_stack_dev = FullStackDeveloper("Tom")
+print(full_stack_dev.skills)
+
+full_stack_dev.create_web_application()
