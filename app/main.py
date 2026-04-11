@@ -16,7 +16,6 @@ class FrontendDeveloper(SoftwareEngineer):
             "HTML",
             "CSS",
         ])
-        self.skills = list(set(self.skills))
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -31,7 +30,6 @@ class BackendDeveloper(SoftwareEngineer):
             "SQL",
             "Django",
         ])
-        self.skills = list(set(self.skills))
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -45,7 +43,6 @@ class AndroidDeveloper(SoftwareEngineer):
             "Java",
             "Android studio",
         ])
-        self.skills = list(set(self.skills))
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
@@ -53,18 +50,6 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
-    def __init__(self, name: str) -> None:
-        super().__init__(name)
-        self.skills.extend([
-            "Python",
-            "SQL",
-            "Django",
-            "JavaScript",
-            "HTML",
-            "CSS",
-        ])
-        self.skills = list(set(self.skills))
-
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
         self.create_powerful_api()
