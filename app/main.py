@@ -27,7 +27,7 @@ class FrontendDeveloper(SoftwareEngineer):
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        required_skills =[
+        required_skills = [
             "Python",
             "SQL",
             "Django",
