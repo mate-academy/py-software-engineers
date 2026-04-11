@@ -11,13 +11,12 @@ class SoftwareEngineer:
 class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        required_skills = [
+        self.skills.extend([
             "JavaScript",
-            "CSS",
             "HTML",
-        ]
-        for skill in required_skills:
-            self.learn_skill(skill)
+            "CSS",
+        ])
+        self.skills = list(set(self.skills))
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -27,13 +26,12 @@ class FrontendDeveloper(SoftwareEngineer):
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        required_skills = [
+        self.skills.extend([
             "Python",
             "SQL",
             "Django",
-        ]
-        for skill in required_skills:
-            self.learn_skill(skill)
+        ])
+        self.skills = list(set(self.skills))
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -43,12 +41,11 @@ class BackendDeveloper(SoftwareEngineer):
 class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        required_skills = [
+        self.skills.extend([
             "Java",
             "Android studio",
-        ]
-        for skill in required_skills:
-            self.learn_skill(skill)
+        ])
+        self.skills = list(set(self.skills))
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
@@ -58,16 +55,15 @@ class AndroidDeveloper(SoftwareEngineer):
 class FullStackDeveloper(FrontendDeveloper, BackendDeveloper):
     def __init__(self, name: str) -> None:
         super().__init__(name)
-        required_skills = [
+        self.skills.extend([
             "Python",
             "SQL",
             "Django",
             "JavaScript",
-            "CSS",
             "HTML",
-        ]
-        for skill in required_skills:
-            self.learn_skill(skill)
+            "CSS",
+        ])
+        self.skills = list(set(self.skills))
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
