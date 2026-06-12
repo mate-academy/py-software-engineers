@@ -1,1 +1,37 @@
-# write your code here
+class SoftwareEngineer:
+    def __init__(self, name):
+        self.name = name
+        self.skills = []
+
+    def learn_skills(self, skill):
+        self.skills.append(skill)
+
+
+class FrontendDeveloper(SoftwareEngineer):
+    def __init__(self, name, *args, **kwargs):
+        super().__init__(name, *args, **kwargs)
+        self.skills.extend(["JavaScript", "HTML", "CSS"])
+
+    def create_awesome_web_page(self):
+        print(f"{self.name} is creating a webpage...")
+        return "<h1>Hello world!</h1>"
+
+
+class BackendDeveloper(SoftwareEngineer):
+    def __init__(self, name, *args, **kwargs):
+        super().__init__(name, *args, **kwargs)
+        self.skills.extend(["Python", "SQL", "Django"])
+
+    def create_powerful_api(self):
+        print(f"{self.name} is creating an API...")
+        return "http://127.0.0.1:8000"
+
+
+class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def create_web_application(self):
+        print(f"{self.name} started creating a web application...")
+        self.create_powerful_api()
+        self.create_awesome_web_page()
