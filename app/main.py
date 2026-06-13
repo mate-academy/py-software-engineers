@@ -1,10 +1,8 @@
 class SoftwareEngineer:
 
-    def __init__(self, name: str, skills=None) -> None:
-        if skills is None:
-            skills = []
+    def __init__(self, name: str) -> None:
         self.name = name
-        self.skills = skills
+        self.skills = []
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
@@ -12,10 +10,9 @@ class SoftwareEngineer:
 
 class FrontendDeveloper(SoftwareEngineer):
 
-    def __init__(self, name: str, skills=None) -> None:
-        super().__init__(name, skills)
-        front_skills = ["JavaScript", "HTML", "CSS"]
-        self.skills.extend(front_skills)
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_awesome_web_page(self) -> str:
         message = f"{self.name} is creating a webpage..."
@@ -26,10 +23,9 @@ class FrontendDeveloper(SoftwareEngineer):
 
 class BackendDeveloper(SoftwareEngineer):
 
-    def __init__(self, name: str, skills=None) -> None:
-        super().__init__(name, skills)
-        back_skills = ["Python", "SQL", "Django"]
-        self.skills.extend(back_skills)
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        self.skills.extend(["Python", "SQL", "Django"])
 
     def create_powerful_api(self) -> str:
         message = f"{self.name} is creating an API..."
@@ -40,10 +36,9 @@ class BackendDeveloper(SoftwareEngineer):
 
 class AndroidDeveloper(SoftwareEngineer):
 
-    def __init__(self, name: str, skills=None) -> None:
-        super().__init__(name, skills)
-        android_skills = ["Java", "Android studio"]
-        self.skills.extend(android_skills)
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        self.skills.extend(["Java", "Android studio"])
 
     def create_smooth_mobile_app(self) -> str:
         message = f"{self.name} is creating a mobile app..."
@@ -54,8 +49,10 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
 
-    def __init__(self, name: str, skills=None) -> None:
-        super().__init__(name, skills)
+    def __init__(self, name: str) -> None:
+        SoftwareEngineer.__init__(self, name)
+        self.skills.extend(["Python", "SQL", "Django"])
+        self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_web_application(self) -> None:
         message = f"{self.name} started creating a web application..."
