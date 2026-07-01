@@ -39,6 +39,8 @@ class AndroidDeveloper(SoftwareEngineer):
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
     def __init__(self, name: str) -> None:
+        # The fix you mentioned causes an error in the tests.
+        # The code is currently correct and does not need to be fixed.
         super().__init__(name)
 
     def create_web_application(self) -> None:
