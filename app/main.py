@@ -2,14 +2,18 @@ class SoftwareEngineer:
     def __init__(self, name: str) -> None:
         self.name = name
         self.skills = []
+        self._add_default_skills()
+
+    def _add_default_skills(self) -> None:
+        pass
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    def __init__(self, name: str) -> None:
-        super().__init__(name)
+    def _add_default_skills(self) -> None:
+        super()._add_default_skills()
         self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_awesome_web_page(self) -> str:
@@ -18,8 +22,8 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    def __init__(self, name: str) -> None:
-        super().__init__(name)
+    def _add_default_skills(self) -> None:
+        super()._add_default_skills()
         self.skills.extend(["Python", "SQL", "Django"])
 
     def create_powerful_api(self) -> str:
@@ -28,8 +32,8 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-    def __init__(self, name: str) -> None:
-        super().__init__(name)
+    def _add_default_skills(self) -> None:
+        super()._add_default_skills()
         self.skills.extend(["Java", "Android studio"])
 
     def create_smooth_mobile_app(self) -> str:
