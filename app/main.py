@@ -1,16 +1,17 @@
 class SoftwareEngineer:
+    default_skills = []
+
     def __init__(self, name: str) -> None:
         self.name = name
         self.skills = []
+        self.skills.extend(self.default_skills)
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
 
 
 class FrontendDeveloper(SoftwareEngineer):
-    def __init__(self, name: str) -> None:
-        super().__init__(name)
-        self.skills.extend(["JavaScript", "HTML", "CSS"])
+    default_skills = ["JavaScript", "HTML", "CSS"]
 
     def create_awesome_web_page(self) -> str:
         print(f"{self.name} is creating a webpage...")
@@ -18,9 +19,7 @@ class FrontendDeveloper(SoftwareEngineer):
 
 
 class BackendDeveloper(SoftwareEngineer):
-    def __init__(self, name: str) -> None:
-        super().__init__(name)
-        self.skills.extend(["Python", "SQL", "Django"])
+    default_skills = ["Python", "SQL", "Django"]
 
     def create_powerful_api(self) -> str:
         print(f"{self.name} is creating an API...")
@@ -28,9 +27,7 @@ class BackendDeveloper(SoftwareEngineer):
 
 
 class AndroidDeveloper(SoftwareEngineer):
-    def __init__(self, name: str) -> None:
-        super().__init__(name)
-        self.skills.extend(["Java", "Android studio"])
+    default_skills = ["Java", "Android studio"]
 
     def create_smooth_mobile_app(self) -> str:
         print(f"{self.name} is creating a mobile app...")
@@ -38,18 +35,10 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
-    def __init__(self, name: str) -> None:
-        SoftwareEngineer.__init__(self, name)
-        self.skills.extend(
-            [
-                "Python",
-                "SQL",
-                "Django",
-                "JavaScript",
-                "HTML",
-                "CSS",
-            ]
-        )
+    default_skills = (
+        BackendDeveloper.default_skills
+        + FrontendDeveloper.default_skills
+    )
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
