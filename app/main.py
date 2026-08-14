@@ -27,7 +27,7 @@ class BackendDeveloper(SoftwareEngineer):
         self.skills.append("Django")
 
     def create_powerful_api(self) -> str:
-        print(f"{self.name} is creating an API..." )
+        print(f"{self.name} is creating an API...")
         return "http://127.0.0.1:8000"
 
 
@@ -38,7 +38,7 @@ class AndroidDeveloper(SoftwareEngineer):
         self.skills.append("Android studio")
 
     def create_smooth_mobile_app(self) -> str:
-        print(f"{self.name} is creating a mobile app..." )
+        print(f"{self.name} is creating a mobile app...")
         return "Ads every three swipes"
 
 
