@@ -1,26 +1,51 @@
 class SoftwareEngineer:
-    def __init__(self, name: str, skills: list = None) -> None:
+    def __init__(self, name: str) -> None:
         self.name = name
-        self.skills = skills if skills is not None else []
+        self.skills: list = []
 
     def learn_skill(self, skill: str) -> None:
         self.skills.append(skill)
 
 
-class FrontendEngineer(SoftwareEngineer):
-    def create_web_page(self) -> str:
-        return f"{self.name} is creating a web page..."
+class FrontendDeveloper(SoftwareEngineer):
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        self.skills.extend(["JavaScript", "HTML", "CSS"])
+
+    def create_awesome_web_page(self) -> str:
+        print(f"{self.name} is creating a webpage...")
+        return "<h1>Hello world</h1>"
 
 
-class BackendEngineer(SoftwareEngineer):
+class BackendDeveloper(SoftwareEngineer):
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        self.skills.extend(["Python", "SQL", "Django"])
+
     def create_powerful_api(self) -> str:
-        return f"{self.name} is creating a powerful API..."
-
-
-class FullStackEngineer(FrontendEngineer, BackendEngineer):
-    pass
+        print(f"{self.name} is creating an API...")
+        return "http://127.0.0.1:8000"
 
 
 class AndroidDeveloper(SoftwareEngineer):
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        self.skills.extend(["Java", "Android studio"])
+
     def create_smooth_mobile_app(self) -> str:
-        return f"{self.name} is creating a smooth mobile app..."
+        print(f"{self.name} is creating a mobile app...")
+        return "Ads every three swipes"
+
+
+class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
+    def __init__(self, name: str) -> None:
+        super().__init__(name)
+        self.skills.clear()
+        self.skills.extend([
+            "Python", "SQL", "Django", "JavaScript", "HTML", "CSS"
+        ])
+
+    def create_web_application(self) -> None:
+        print(f"{self.name} started creating a web application...")
+        self.create_powerful_api()
+        self.create_awesome_web_page()
