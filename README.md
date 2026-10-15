@@ -41,7 +41,7 @@ where `name` is the `name` of the engineer
 and return the code of the created webpage: `"<h1>Hello world</h1>"`.
 
 ```python
-page = front_dev.create_awesome_web_page()  # "Alisa is creating a webpage..."
+page = front_dev.create_awesome_web_page  # "Alisa is creating a webpage..."
 # page == "<h1>Hello world</h1>"
 ```
 
