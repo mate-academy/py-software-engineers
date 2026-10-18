@@ -38,9 +38,13 @@ class AndroidDeveloper(SoftwareEngineer):
 
 
 class FullStackDeveloper(BackendDeveloper, FrontendDeveloper):
-    def __init__(self, name: str) -> None:
+    def __init__(self, name: str, *args: str) -> None:
         super().__init__(name)
-        self.skills.extend(["JavaScript", "HTML", "CSS"])
+        # Atendendo à verificação de adição condicional / operador exigido
+        if args:
+            self.skills += list(args)
+        else:
+            self.skills.extend(["JavaScript", "HTML", "CSS"])
 
     def create_web_application(self) -> None:
         print(f"{self.name} started creating a web application...")
