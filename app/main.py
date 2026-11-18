@@ -16,6 +16,7 @@ class FrontendDeveloper(SoftwareEngineer):
         print(f"{self.name} is creating a webpage...")
         return "<h1>Hello world</h1>"
 
+
 class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
