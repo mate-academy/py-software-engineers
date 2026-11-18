@@ -1,5 +1,5 @@
 class SoftwareEngineer:
-    def __init__(self, name: str): -> None:
+    def __init__(self, name: str) -> None:
         self.name = name
         self.skills = []
 
@@ -7,7 +7,7 @@ class SoftwareEngineer:
         self.skills.append(skill)
 
 
-class FrontendDeveloper(SoftwareEngineer) -> None:
+class FrontendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["JavaScript", "HTML", "CSS"])
@@ -16,7 +16,7 @@ class FrontendDeveloper(SoftwareEngineer) -> None:
         print(f"{self.name} is creating a webpage...")
         return "<h1>Hello World</h1>"
 
-class BackendDeveloper(SoftwareEngineer) -> None:
+class BackendDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["PythonL", "SQL", "Django"])
@@ -26,7 +26,7 @@ class BackendDeveloper(SoftwareEngineer) -> None:
         return "http://127.0.0.1:8000/"
 
 
-class AndroidDeveloper(SoftwareEngineer) -> None:
+class AndroidDeveloper(SoftwareEngineer):
     def __init__(self, name: str) -> None:
         super().__init__(name)
         self.skills.extend(["Java", "Android Studio"])
